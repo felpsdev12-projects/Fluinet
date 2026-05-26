@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fluinet-Telecom</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="mobile.css">
+	<link rel="stylesheet" href="transition.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="assets/logoTelecom.png" type="image/x-icon">
+</head>
+
+<body>
+	<header>
+		<div class="logoBox">
+			<img src="assets/logoTelecom.png" alt="TELECOM" id="telecom_logo">
+		</div>
+		<div class="flexSections">
+			<div class="flexUpText">
+				<p id="upText" class="grayText">Bem-vindo a Telecom Fluinet</p>
+
+				<div class="sectionsFlexCep whiteText">
+					<button title="Editar" class="editInfo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+						<path d="M160-400v-80h280v80H160Zm0-160v-80h440v80H160Zm0-160v-80h440v80H160Zm360 560v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T863-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/>
+					</svg></button>
+					<div class="columnInfo">
+					<h3 id="cepInfo">CEP: <span>Inserir</span></h3>
+					<p id="bairroInfo">Bairro: <span>Inserir</span></p>
+					</div>
+				</div>
+
+				<a id="email" class="grayText"
+					href="https://mail.google.com/mail/?view=cm&fs=1&to=fluinettelecom@gmail.com"
+					target="_blank">fluinettelecom@gmail.com</a>
+			</div>
+
+			<hr class="line">
+
+			<div class="boxSections">
+				<div class="sections">
+					<a href="#home" id="homeNav" class="grayText">Início</a>
+					<a href="#planos" id="planosNav" class="grayText">Planos</a>
+					<a href="#" id="contatoNav" class="grayText">Contato</a>
+				</div>
+
+				<div class="network">
+					<a href="https://www.instagram.com/fluinettelecom?igsh=Nmg1bG51MXFuaGll" target="_blank">
+						<button id="instagram">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+								viewBox="0 0 32 32" id="Camada_1" version="1.1" xml:space="preserve">
+								<g>
+									<path
+										d="M22.3,8.4c-0.8,0-1.4,0.6-1.4,1.4c0,0.8,0.6,1.4,1.4,1.4c0.8,0,1.4-0.6,1.4-1.4C23.7,9,23.1,8.4,22.3,8.4z" />
+									<path
+										d="M16,10.2c-3.3,0-5.9,2.7-5.9,5.9s2.7,5.9,5.9,5.9s5.9-2.7,5.9-5.9S19.3,10.2,16,10.2z M16,19.9c-2.1,0-3.8-1.7-3.8-3.8   c0-2.1,1.7-3.8,3.8-3.8c2.1,0,3.8,1.7,3.8,3.8C19.8,18.2,18.1,19.9,16,19.9z" />
+									<path
+										d="M20.8,4h-9.5C7.2,4,4,7.2,4,11.2v9.5c0,4,3.2,7.2,7.2,7.2h9.5c4,0,7.2-3.2,7.2-7.2v-9.5C28,7.2,24.8,4,20.8,4z M25.7,20.8   c0,2.7-2.2,5-5,5h-9.5c-2.7,0-5-2.2-5-5v-9.5c0-2.7,2.2-5,5-5h9.5c2.7,0,5,2.2,5,5V20.8z" />
+								</g>
+							</svg>
+						</button></a>
+
+					<a href="https://wa.me/963348201?text=" target="_blank">
+						<button id="whatsapp">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+								<path
+									d="M17.6 6.31999C16.8669 5.58141 15.9943 4.99596 15.033 4.59767C14.0716 4.19938 13.0406 3.99622 12 3.99999C10.6089 4.00135 9.24248 4.36819 8.03771 5.06377C6.83294 5.75935 5.83208 6.75926 5.13534 7.96335C4.4386 9.16745 4.07046 10.5335 4.06776 11.9246C4.06507 13.3158 4.42793 14.6832 5.12 15.89L4 20L8.2 18.9C9.35975 19.5452 10.6629 19.8891 11.99 19.9C14.0997 19.9001 16.124 19.0668 17.6222 17.5816C19.1205 16.0965 19.9715 14.0796 19.99 11.97C19.983 10.9173 19.7682 9.87634 19.3581 8.9068C18.948 7.93725 18.3505 7.05819 17.6 6.31999ZM12 18.53C10.8177 18.5308 9.65701 18.213 8.64 17.61L8.4 17.46L5.91 18.12L6.57 15.69L6.41 15.44C5.55925 14.0667 5.24174 12.429 5.51762 10.8372C5.7935 9.24545 6.64361 7.81015 7.9069 6.80322C9.1702 5.79628 10.7589 5.28765 12.3721 5.37368C13.9853 5.4597 15.511 6.13441 16.66 7.26999C17.916 8.49818 18.635 10.1735 18.66 11.93C18.6442 13.6859 17.9355 15.3645 16.6882 16.6006C15.441 17.8366 13.756 18.5301 12 18.53ZM15.61 13.59C15.41 13.49 14.44 13.01 14.26 12.95C14.08 12.89 13.94 12.85 13.81 13.05C13.6144 13.3181 13.404 13.5751 13.18 13.82C13.07 13.96 12.95 13.97 12.75 13.82C11.6097 13.3694 10.6597 12.5394 10.06 11.47C9.85 11.12 10.26 11.14 10.64 10.39C10.6681 10.3359 10.6827 10.2759 10.6827 10.215C10.6827 10.1541 10.6681 10.0941 10.64 10.04C10.64 9.93999 10.19 8.95999 10.03 8.56999C9.87 8.17999 9.71 8.23999 9.58 8.22999H9.19C9.08895 8.23154 8.9894 8.25465 8.898 8.29776C8.8066 8.34087 8.72546 8.403 8.66 8.47999C8.43562 8.69817 8.26061 8.96191 8.14676 9.25343C8.03291 9.54495 7.98287 9.85749 8 10.17C8.0627 10.9181 8.34443 11.6311 8.81 12.22C9.6622 13.4958 10.8301 14.5293 12.2 15.22C12.9185 15.6394 13.7535 15.8148 14.58 15.72C14.8552 15.6654 15.1159 15.5535 15.345 15.3915C15.5742 15.2296 15.7667 15.0212 15.91 14.78C16.0428 14.4856 16.0846 14.1583 16.03 13.84C15.94 13.74 15.81 13.69 15.61 13.59Z" />
+							</svg>
+						</button></a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="blockedImage" data-target=".initialInfo" id="home">
+		<div class="initialInfo whiteText">
+			<h2 id="imageText">BEM VINDO A <br> FLUINET TELECOM!</h2>
+			<button class="whiteText" id="redirectToFlat" onclick="location.href='#planos'">
+				<p>Conheça Nossos Planos!</p>
+			</button>
+		</div>
+	</div>
+
+	<main>
+		
+
+			<div class="ofertas whiteText" data-target=".oferta">
+				<div class="arrowButtons">
+					<button id="next">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+							<path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+						</svg>
+					</button>
+
+					<button id="back">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+							<path d="M640-80 240-480l400-400 71 71-329 329 329 329-71 71Z" />
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			<hr class="lineDivisoria">
+
+			<section id="planos" data-target=".plano">
+
+				<h2 class="sectionTitle">NOSSOS PLANOS</h2>
+
+			<div class="sideBarBox">
+				<aside class="sidebar whiteText">
+					<span class="sidebarOptions" data-target=".comboSection">COMBOS</span>
+					<span class="sidebarOptions" data-target=".basicoSection">PLANOS BÁSICOS</span>
+				</aside>
+			</div>
+
+			<h2 class="sectionTitle comboSection" style="display: none;">NOSSOS COMBOS</h2>
+
+			<div class="boxCombos comboSection" style="display: none;">
+				
+				<div class="flexCombos whiteText">
+					<div id="destaqueCombo" class="plano destaque">
+				</div>
+				</div>
+			</div>
+
+			<hr class="lineDivisoria">
+
+			<h2 class="sectionTitle basicoSection" style="display: none;">NOSSOS PLANOS</h2>
+
+			<div class="flexPlanos basicoSection whiteText" style="display: none;">
+				<div id="destaqueBasico" class="plano destaque">
+				</div>
+			</div>
+		</section>
+
+		<section id="numeros" data-target=".boxNumbers">
+
+			<h2 class="sectionTitle">OS NÚMEROS FALAM!</h2>
+
+			<div class="boxNumbers">
+				<div class="flexNumbers whiteText">
+
+					<div class="numbers" id="anos">
+						<h3>3</h3>
+						<h2>ANOS DE EXPERIÊNCIA</h2>
+					</div>
+
+					<div class="numbers" id="contratos">
+						<h3>+200</h3>
+						<h2>PLANOS CONTRATADOS</h2>
+					</div>
+
+					<div class="numbers" id="avaliacoes">
+						<h3>+300</h3>
+						<h2>AVALIAÇÕES POSITIVAS</h2>
+					</div>
+
+					<div class="numbers" id="qualidade">
+						<a>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+								<path
+									d="m298-309-70-71q51-48 116-74t136-26q71 0 136 26t116 74l-70 71q-38-35-84.5-53T480-380q-51 0-97.5 18T298-309ZM73-536 2-607q97-94 220.5-143.5T480-800q134 0 257.5 49.5T958-607l-71 71q-82-79-187-121.5T480-700q-115 0-220 42.5T73-536Zm113 114-70-71q74-71 168-109t197-38q103 0 196.5 37.5T845-494l-70 71q-60-57-136.5-87T480-540q-83 0-158.5 30.5T186-422Zm237.5 238.5Q400-207 400-240t23.5-56.5Q447-320 480-320t56.5 23.5Q560-273 560-240t-23.5 56.5Q513-160 480-160t-56.5-23.5Z" />
+							</svg>
+						</a>
+
+						<h2>ALTÍSSIMA QUALIDADE</h2>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="feedback">
+
+			<h2 class="sectionTitle">AVALIAÇÕES</h2>
+
+			<div class="flexBox whiteText">
+				<div class="feedbackBox">
+				</div>
+				<div class="feedbackNumbers">
+						<a class="commentIcon">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+								xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" viewBox="0 0 32 32"
+								version="1.1">
+								<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+									sketch:type="MSPage">
+									<g id="Icon-Set" sketch:type="MSLayerGroup"
+										transform="translate(-152.000000, -255.000000)" fill="#000000">
+										<path
+											d="M168,281 C166.832,281 165.704,280.864 164.62,280.633 L159.912,283.463 L159.975,278.824 C156.366,276.654 154,273.066 154,269 C154,262.373 160.268,257 168,257 C175.732,257 182,262.373 182,269 C182,275.628 175.732,281 168,281 L168,281 Z M168,255 C159.164,255 152,261.269 152,269 C152,273.419 154.345,277.354 158,279.919 L158,287 L165.009,282.747 C165.979,282.907 166.977,283 168,283 C176.836,283 184,276.732 184,269 C184,261.269 176.836,255 168,255 L168,255 Z M175,266 L161,266 C160.448,266 160,266.448 160,267 C160,267.553 160.448,268 161,268 L175,268 C175.552,268 176,267.553 176,267 C176,266.448 175.552,266 175,266 L175,266 Z M173,272 L163,272 C162.448,272 162,272.447 162,273 C162,273.553 162.448,274 163,274 L173,274 C173.552,274 174,273.553 174,273 C174,272.447 173.552,272 173,272 L173,272 Z"
+											id="comment-2" sketch:type="MSShapeGroup">
+										</path>
+									</g>
+								</g>
+							</svg>
+
+							<h3 class="totalComments">0</h3>
+						</a>
+
+					<a class="media">
+						<div class="totalAverage"></div>
+						<h3 class="totalMedia">5</h3>
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<div class="cepBox" style="display: none;">
+		<div class="cepFlex caixaCep">
+
+			<button id="closeCepBox" class="closeBtn">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+			<path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+			</svg>
+		</button>
+
+		<p>Digite seu CEP abaixo para verificar se há disponibilidade para sua região</p>
+		<input type="text" class="cepInput" id="inputCepPrincipal" placeholder="Digite seu CEP">
+		<p class="bairro" style="display: none;"></p>
+		<button id="searchCep"><h4>Confirmar</h4></button>
+		</div>
+	</div>
+
+	<div class="alertBox destaque_alert" style="display: none;">
+		<button id="closeAlert" class="closeBtn">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+			<path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+			</svg>
+		</button>
+		<div class="alertFlex whiteText">
+			<h3 class="alert"></h3>
+		</div>
+	</div>
+
+	<script src="script.js" type="module"></script>
+	<script src="index.js" type="module"></script>
+	<script src="./fun/functions.js" type="module"></script>
+	<script src="./loads/alerts.js" type="module"></script>
+	<script src="./loads/destaques.js" type="module"></script>
+</body>
+
+</html>

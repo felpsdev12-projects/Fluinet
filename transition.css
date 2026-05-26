@@ -1,0 +1,39 @@
+.toZeroLeft {
+	left: 0 !important;
+	opacity: 1 !important;
+}
+
+.toScaleRotate {
+	transform: scale(1) rotateY(360deg) !important;
+}
+
+.toScale {
+	transform: scale(1) !important;
+}
+
+.toOpacity {
+	opacity: 1 !important;
+}
+
+.toFill {
+	box-sizing: border-box;
+}
+
+.gradientRight {
+	background: linear-gradient(to right, white, var(--orange) 30%, var(--yellowgreen), white);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+	background-size: 300% 100%;
+	animation: gradientFlow 4s linear infinite;
+}
+
+@keyframes gradientFlow {
+	0%{
+		background-position: 100% 0%;
+	}
+	100% {
+		background-position: -200% 0%
+	}
+}
