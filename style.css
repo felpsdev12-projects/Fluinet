@@ -362,6 +362,11 @@ section#planos {
 			flex-direction: column;
 			gap: 40px;
 
+			p.avaliablePlans {
+				text-align: center;
+				border-bottom: solid var(--cyan) 2px;
+			}
+
 			.choicePlansContainer {
 				display: flex;
 				gap: 20px;
