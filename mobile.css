@@ -17,6 +17,13 @@
 		padding-bottom: 40px;
 	}
 
+	.cepBox {
+
+		.cepFlex {
+			scale: .8;
+		}
+	}
+
 	header {
 		display: flex;
 		flex-direction: column;
