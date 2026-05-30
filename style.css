@@ -713,6 +713,7 @@ div.ofertas {
 			flex-direction: column;
 			justify-content: space-around;
 			align-items: center;
+			text-align: center;
 
 			p.apps {
 				position: relative;
@@ -736,7 +737,7 @@ div.ofertas {
 				border-radius: 10px;
 				background: var(--black);
 				padding: 15px;
-				font-weight: 500;
+				font-weight: 450;
 			}
 
 			.flexLastLine {
