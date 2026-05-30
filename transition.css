@@ -20,7 +20,7 @@
 }
 
 .gradientRight {
-	background: linear-gradient(to right, white, var(--orange) 30%, var(--yellowgreen), white);
+	background: linear-gradient(to right, var(--cyan), white, var(--cyan));
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;

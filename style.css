@@ -10,6 +10,10 @@
 	color: white;
 }
 
+button {
+	cursor: pointer;
+}
+
 .grayText {
 	color: var(--gray)
 }
@@ -21,6 +25,7 @@
 	--green: rgb(68, 255, 0);
 	--yellowgreen: rgb(208, 255, 0);
 	--blue: #06468a;
+	--cyan: rgba(0, 255, 255, 1);
 }
 
 .line {
@@ -133,6 +138,10 @@ html {
 	svg {
 		fill: white !important;
 	}
+}
+
+.sectionTitle {
+	color: white;
 }
 
 header {
@@ -339,10 +348,290 @@ main {
 section#planos {
 	width: 90%;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	gap: 60px;
-	align-items: center;
+	justify-content: flex-start;
+
+	.plansOptionsContainer {
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		width: 20%;
+		padding: 10px;
+
+		.plansOptions {
+			display: flex;
+			flex-direction: column;
+			gap: 40px;
+
+			.choicePlansContainer {
+				display: flex;
+				gap: 20px;
+
+				button {
+					width: 100px;
+					padding: 3px;
+					border: solid white 2px;
+					background: none;
+					color: white;
+					border-radius: 10px;
+				}
+
+				button:hover {
+					border: solid var(--cyan) 2px;
+				}
+			}
+		}
+
+		.columnPlansOptions {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+
+			.planOption {
+				display: flex;
+				justify-content: space-around;
+				font-size: 16px;
+				color: white;
+				gap: 10px;
+				border: solid var(--gray) 2px;
+				border-radius: 10px;
+				padding: 5px;
+				cursor: pointer;
+			}
+
+			.planOption:hover {
+				border: solid rgba(0, 255, 255, .9) 2px;
+			}
+		}
+	}
+
+	.plansContainer {
+		display: flex;
+		align-items: end;
+		text-align: center;
+		border: solid transparent;
+		border-radius: 20px;
+		padding: 6px;
+		width: 60%;
+		margin: 0 auto;
+		min-height: 375px;
+		max-height: auto;
+
+		.imageContainer {
+			width: 40%;
+			order: 2;
+			height: 100%;
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			color: white;
+			justify-content: space-around;
+
+			h3 {
+				padding: 3px;
+				width: 80%;
+				border-bottom: solid var(--gray) 2px;
+			}
+
+			img {
+				width: 100%;
+				max-width: auto;
+			}
+		}
+
+		.flexPlanInfo {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			color: white;
+			margin: 0 auto;
+			padding: 10px;
+			width: 60%;
+
+			.flexFirstLineBoxes {
+				display: flex;
+				gap: 40px;
+				align-items: center;
+			}
+
+			.firstLineBox {
+				border: solid var(--gray) 2px;
+				border-radius: 10px;
+				padding: 3px 15px;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+			}
+
+			.secondLineBox {
+				width: 35%;
+				display: flex;
+				flex-direction: column;
+				border-radius: 10px;
+				padding: 10px;
+				gap: 5px;
+
+				.mbpsTitle {
+					color: var(--gray);
+					font-weight: 400;
+				}
+
+				.uploadSecondLine,
+				.downloadSecondLine {
+					display: flex;
+					align-items: center;
+					gap: 6px;
+
+					i {
+						width: 35px;
+						height: 35px;
+
+						svg {
+							fill: white;
+							width: 100%;
+							height: 100%;
+						}
+					}
+				}
+			}
+
+			.secondColumnLineBox {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+				width: 50%;
+
+				h4 {
+					border: solid var(--gray) 2px;
+					box-shadow: 2px 2px var(--cyan);
+					border-radius: 10px;
+					padding: 3px 10px;
+					width: 100%;
+				}
+			}
+
+			.captionBox {
+				border-radius: 10px;
+				padding: 3px;
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+
+				.caption {
+					text-align: center;
+					font-weight: 400;
+					color: var(--gray);
+				}
+
+				.includedApps {
+					display: flex;
+					gap: 7px;
+
+					.flexIncludedApps {
+						display: flex;
+						gap: 7px;
+
+						i {
+							width: 30px;
+							height: 30px;
+
+							svg {
+								width: 100%;
+								height: 100%;
+							}
+						}
+					}
+				}
+			}
+
+			.appsBox {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+				justify-content: center;
+				align-items: center;
+
+				.confirmAppsBtn {
+					border: solid white 2px;
+					border-radius: 10px;
+					background: green;
+					color: white;
+					padding: 3px;
+					width: 220px;
+					font-size: 16px;
+				}
+
+				.appsContainer {
+					display: flex;
+					gap: 10px;
+
+					i {
+						width: 35px;
+						height: 35px;
+
+						svg {
+							width: 100%;
+							height: 100%;
+						}
+					}
+				}
+			}
+
+		}
+
+		div.contratarBox {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			align-items: center;
+			padding: 10px;
+
+			.price {
+				color: var(--gray);
+				display: flex;
+				flex-direction: column;
+
+				span {
+					color: white;
+					font-size: 18px;
+				}
+			}
+
+			button.contratarPlanoBtn {
+				border: solid var(--gray) 2px;
+				box-shadow: 0 2px var(--cyan);
+				border-radius: 10px;
+				padding: 4px;
+				font-size: 16px;
+				color: white;
+				background: transparent;
+				width: 180px;
+			}
+
+			button.contratarPlanoBtn:hover {
+				scale: 1.1;
+				box-shadow: 2px 2px var(--cyan);
+			}
+
+			i {
+				width: 35px;
+				height: 35px;
+				border-radius: 10px;
+				cursor: pointer;
+
+				svg {
+					fill: white;
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			i:hover {
+				svg {
+					fill: var(--cyan);
+				}
+			}
+		}
+	}
 }
 
 
@@ -354,7 +643,8 @@ div.ofertas {
 	flex-wrap: nowrap;
 	box-shadow: 0 0 30px transparent;
 	border-radius: 20px;
-	max-height: 350px;
+	height: 350px;
+	box-shadow: 0 0 30px var(--cyan);
 
 
 	.arrowButtons {
@@ -376,10 +666,12 @@ div.ofertas {
 			padding: 0;
 			border: none;
 			transition-duration: 0.2s;
+			background: transparent;
 
 			svg {
 				width: 100%;
 				height: 100%;
+				fill: white;
 			}
 		}
 
@@ -401,69 +693,77 @@ div.ofertas {
 	}
 
 	.oferta {
-		display: flex;
-		position: relative;
-		border-radius: 10px;
 		padding: 10px;
-		width: 100%;
-		gap: 40px;
-		z-index: 3;
-		flex-shrink: 0;
-		scroll-snap-align: center;
+		display: flex;
+		gap: 60px;
+		background: black;
 
 		.ofertaImage {
+			width: 50%;
 
 			img {
 				width: 100%;
-				height: 340px;
+				height: 100%;
 				border-radius: 10px;
 			}
 		}
 
 		.ofertaInfo {
-			text-align: center;
 			display: flex;
 			flex-direction: column;
-			justify-content: space-between;
-			padding: 20px;
-			gap: 20px;
-			width: 60%;
+			justify-content: space-around;
+			align-items: center;
+
+			p.apps {
+				position: relative;
+				box-shadow: 0 3px var(--cyan);
+				padding: 5px;
+				width: 250px;
+				height: auto;
+				text-align: center;
+			}
 
 			.ofertaTitle {
-				font-size: 25px;
-				color: white;
+				box-shadow: 0 0 10px var(--cyan);
+				padding: 3px;
+				border-radius: 10px;
+				width: 320px;
+				text-align: center;
 			}
 
 			.ofertaCaption {
-				margin-top: 10px;
-				font-size: 17px;
+				border: solid var(--gray) 2px;
+				border-radius: 10px;
+				background: var(--black);
+				padding: 15px;
+				font-weight: 500;
+			}
+
+			.flexLastLine {
+				width: 100%;
+				font-size: 13px;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+
+				.expiresBox {
+					.expiresIn {
+						font-size: 17px;
+					}
+				}
+
+				a {
+					font-size: 16px;
+					text-decoration: underline var(--cyan) 2px;
+					color: white;
+				}
+
+				a:hover {
+					scale: 1.1;
+				}
 			}
 		}
 	}
-
-	.flexLastLine {
-		font-size: 13px;
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-
-		.expiresBox {
-		.expiresIn {
-			font-size: 17px;
-		}
-	}
-
-	a {
-		font-size: 16px;
-		text-decoration: underline var(--blue) 2px;
-		color: white;
-	}
-
-	a:hover {
-		scale: 1.1;
-	}
-	}
-
 }
 
 .input_erro {
@@ -721,239 +1021,6 @@ div.ofertas::-webkit-scrollbar {
 	}
 }
 
-.plano {
-	display: flex;
-	flex-direction: column;
-	max-height: 550px;
-	transform: scale(0);
-	transition: transform 1.4s;
-	gap: 15px;
-	padding: 10px;
-	border-radius: 60px;
-	border: solid transparent;
-	background: #141313;
-
-	.image {
-		display: flex;
-		background-size: cover !important;
-		background-position: center !important;
-		width: 100% !important;
-		min-height: 180px !important;
-		image-rendering: unset;
-		border-radius: 40px;
-
-		#destaqueIcon {
-			position: absolute;
-			padding: 5px;
-			margin: 15px;
-			border-radius: 70px;
-			background: black;
-			text-align: center;
-
-			p {
-				background: linear-gradient(to right, var(--orange), var(--yellowgreen));
-				background-clip: border-box;
-				position: relative;
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				font-size: 13px;
-			}
-		}
-
-	}
-
-	.planoInfo {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		gap: 10px;
-
-		p.taxa {
-			color: white;
-			font-size: 15px;
-		}
-
-		.planoFirstLine {
-			width: 100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 20px;
-
-			h3.tec {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-
-				span {
-					font-size: 15px;
-				}
-			}
-
-			.speedBox {
-				display: flex;
-				flex-direction: column;
-				gap: 4px;
-				font-size: 13px;
-
-				h3 {
-					color: var(--orange);
-
-					span {
-						color: white !important;
-					}
-				}
-			}
-		}
-
-		.priceBox {
-			display: flex;
-			justify-content: space-evenly;
-			width: 90%;
-
-			.price {
-				color: var(--gray);
-				font-size: 17px;
-
-				span {
-					color: white;
-				}
-			}
-		}
-
-		p {
-			font-weight: 500 !important;
-			text-shadow: black 1px 1px 1px;
-		}
-	}
-}
-
-.flexPlanos {
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 50px;
-	align-items: center;
-}
-
-section {
-	.sectionTitle {
-		font-size: 30px;
-		color: white;
-	}
-}
-
-.icons {
-	display: flex;
-	flex-direction: row;
-	gap: 5px;
-	background: none;
-	align-items: center;
-	margin-top: -5px;
-	border-radius: 10px;
-
-	.columnAppsInclusos {
-		display: flex;
-		gap: 20px;
-	}
-
-	.flexChoicedIcons {
-		display: flex;
-		gap: 8px;
-		align-items: center;
-	}
-
-	div.boxChoiceIcons {
-		padding: 10px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		gap: 15px;
-
-		.resetHtml {
-			border: none;
-			border-radius: 90px;
-			width: 30px;
-			height: 30px;
-
-			svg {
-				fill: white;
-			}
-		}
-
-		button.confirmChoices {
-			border-radius: 10px;
-			padding: 3px;
-			font-size: 18px;
-			border: none;
-			background: green;
-			color: white;
-			width: 70%;
-		}
-
-		button.confirmChoices:hover {
-			background: #333;
-		}
-
-		div.appsToChoice {
-			display: flex;
-			gap: 10px;
-			padding: 5px;
-
-			i {
-				width: 40px;
-				height: 40px;
-				border-radius: 10px;
-
-				svg {
-					width: 100%;
-					height: 100%;
-				}
-			}
-
-			i:hover {
-				transform: scale(1.1);
-			}
-		}
-
-	}
-
-	div.flexAllIcons {
-		display: flex;
-		gap: 15px;
-		align-items: center;
-		flex-wrap: wrap;
-	}
-
-	span {
-		font-size: 15px;
-		gap: 15px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-
-		i:hover {
-			transform: scale(1.2);
-		}
-	}
-
-	i {
-		width: 40px;
-		height: 40px;
-
-		svg {
-			fill: white !important;
-			width: 100%;
-			height: 100%;
-		}
-	}
-}
-
 .hoverGray {
 
 	svg:hover {
@@ -984,7 +1051,7 @@ section {
 		}
 
 		span:hover {
-			box-shadow: 0 0 14px rgba(0, 255, 255, 1);
+			box-shadow: 0 0 14px var(--cyan);
 			border-radius: 10px;
 			scale: 1.1;
 		}
@@ -1079,12 +1146,14 @@ section {
 }
 
 .orangeBorder {
-	border: solid var(--orange) !important;
+	border: solid var(--orange) 2px !important;
+	padding: 3px;
 	transform: scale(1.1);
+	border-radius: 10px;
 }
 
 .extra {
-	background: linear-gradient(to right, var(--orange), var(--yellowgreen)) !important;
+	background: linear-gradient(to right, white, var(--cyan)) !important;
 	-webkit-background-clip: text !important;
 	background-clip: text !important;
 	-webkit-text-fill-color: transparent !important;
@@ -1092,11 +1161,20 @@ section {
 
 .destaque {
 	background-image:
-		linear-gradient(#141313, #141313),
+		linear-gradient(black, black),
 		conic-gradient(from var(--angle), transparent 70%, var(--orange), red);
 	background-origin: border-box;
 	background-clip: padding-box, border-box;
 	animation: rotate 2s linear infinite;
+}
+
+.destaque_fast {
+	background-image:
+		linear-gradient(black, black),
+		conic-gradient(from var(--angle), transparent 70%, var(--orange), red);
+	background-origin: border-box;
+	background-clip: padding-box, border-box;
+	animation: rotate 1s linear infinite;
 }
 
 .destaque_alert {
@@ -1127,8 +1205,16 @@ section {
 	animation: rotate 3s linear infinite;
 }
 
-.sidebarOptionSelected {
-	box-shadow: 0 0 14px rgba(0, 255, 255, 1);
-	border-radius: 10px;
+.destaque_azul_fast {
+	background-image:
+		linear-gradient(black, black),
+		conic-gradient(from var(--angle), transparent 70%, blue, white);
+	background-origin: border-box;
+	background-clip: padding-box, border-box;
+	animation: rotate 2s linear infinite;
 }
 
+.sidebarOptionSelected {
+	box-shadow: 0 0 14px var(--cyan);
+	border-radius: 10px;
+}

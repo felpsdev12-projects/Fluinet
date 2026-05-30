@@ -80,6 +80,63 @@
 		}
 	}
 
+	section#planos {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		width: 100%;
+
+		.plansOptionsContainer {
+			.columnPlansOptions {
+				.planOption {
+					width: 250px;
+				}
+			}
+		}
+
+		.taxa {
+			font-size: 15px;
+		}
+
+		.appsChoiceText {
+			font-size: 17px;
+		}
+
+		.plansContainer {
+			width: 90%;
+			height: auto;
+			justify-content: center;
+
+			div.contratarBox {
+
+				padding: 0;
+
+				button.contratarPlanoBtn {
+					width: 160px;
+				}
+			}
+
+			.flexPlanInfo {
+				margin: 0;
+				width: 100%;
+
+				.appsBox {
+					.appsContainer {
+
+						i {
+							width: 40px;
+							height: 40px;
+						}
+					}
+				}
+			}
+
+			.imageContainer {
+				display: none;
+			}
+		}
+	}
+
 	.blockedImage {
 		height: 300px;
 
@@ -115,14 +172,14 @@
 		width: 95%;
 
 		.boxNumbers {
-			width: 80%;
+			width: 70%;
 			height: auto;
-            padding: 0;
+			padding: 0;
 
 			.flexNumbers {
 				flex-direction: column;
 				gap: 15px;
-				padding: 10px;
+				padding: 3px;
 				transform: scale(.7);
 
 				.numbers {
@@ -130,9 +187,14 @@
 					align-items: center;
 					flex-direction: row;
 					justify-content: space-around;
+					gap: 30px;
 
 					h3 {
-						font-size: 35px;
+						font-size: 40px;
+					}
+
+					h2 {
+						font-size: 18px;
 					}
 
 					a {
@@ -147,6 +209,7 @@
 	section#feedback {
 
 		.flexBox {
+			height: auto;
 			width: 100dvw;
 			display: flex;
 			flex-direction: column;
@@ -172,7 +235,6 @@
 
 			.feedbackBox {
 				width: 100%;
-				height: 1200px;
 				order: 2;
 				display: flex;
 				gap: 50px;
@@ -192,64 +254,10 @@
 		}
 	}
 
-	.flexCombos {
-		width: 100dvw;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-
-		.plano {
-			width: 90%;
-			gap: 7px;
-			height: 85dvh;
-			font-size: 15px !important;
-
-			.image {
-				height: 500px !important;
-			}
-
-			.planoInfo {
-				font-size: 15px !important;
-				gap: 5px !important;
-
-				.priceBox {
-					align-items: center;
-				}
-			}
-		}
-	}
-
-	.flexPlanos {
-		width: 100dvw;
-		display: flex;
-		flex-direction: column;
-
-		.plano {
-			width: 90%;
-			max-height: 80dvh;
-
-			.planoInfo {
-				gap: 5px !important;
-
-				.priceBox {
-					align-items: center;
-				}
-			}
-		}
-	}
-
-	.icons {
-		& div.boxChoiceIcons {
-			div.appsToChoice {
-				width: 80%;
-			}
-		}
-	}
-
 	div.ofertas {
-		width: 80dvw;
-		height: 30dvh;
+		width: 95%;
+		height: 300px;
+		justify-content: center;
 
 		.arrowButtons {
 			width: 95%;
@@ -257,37 +265,30 @@
 			button {
 				width: 35px;
 				height: 45px;
-                border: none;
-                background: transparent;
-                
-                svg {
-                    fill: white;
-                }
+				border: none;
+				background: transparent;
+				display: none;
+
+				svg {
+					fill: white;
+				}
 			}
 
-            button:hover {
-                background: transparent;
+			button:hover {
+				background: transparent;
 
-                svg {
-                    fill: black;
-                }
-            }
+				svg {
+					fill: black;
+				}
+			}
 		}
 
 
 		div.oferta {
 			width: 100%;
 
-
-			div.ofertaInfo {
-				display: none;
-			}
-
 			div.ofertaImage {
-				display: flex;
-				justify-content: center;
-				width: 100%;
-				height: 90%;
+				display: none;
 			}
 		}
 	}

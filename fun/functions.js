@@ -12,6 +12,88 @@ const cepInput = document.querySelector(".cepInput");
 const alertBox = document.querySelector(".alertBox")
 const btnConfirm = document.getElementById("searchCep");
 
+const returnSpeedHtml = (el) => {
+	let result = el < 200 ? "Conexão Estável" : "Alta Velocidade"
+
+	return result
+}
+
+export function generatePlanHtml(ex) {
+
+	let recomendedHtml = ex["destaque"] ? "Recomendado" : "Básico"
+	let thisTextColor = ex["destaque"] ? "extra" : ""
+
+	return (
+	`<div class="imageContainer">
+							<h3 class="type ${thisTextColor}">${recomendedHtml}</h3>
+							<img src="${ex["imagem"]}">
+						</div>
+
+						<div class="flexPlanInfo">
+							<div class="firstLineBox">
+								<h3 class="planInfoName">${ex["nome"].replace("MB", "MegaBytes")} De Internet</h3>
+							</div>
+				<div class="flexFirstLineBoxes">
+						<div class="secondLineBox">
+								<div class="downloadBox">
+									<h3 class="downloadTitle mbpsTitle">Download: </h3>
+
+									<div class="downloadSecondLine">
+
+										<i>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+											<path d="M440-320v-326L336-542l-56-58 200-200 200 200-56 58-104-104v326h-80ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
+											</svg>
+										</i>
+
+										<h4 class="download">${ex["megaBytes"]} Mbps</h4>
+									</div>
+								</div>
+
+								<div class="uploadBox">
+									<h3 class="uploadTitle mbpsTitle">Upload: </h3>
+
+									<div class="uploadSecondLine">
+										<i>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+											<path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
+											</svg>
+										</i>
+
+										<h4 class="upload">${ex["megaBytes"] / 2} Mbps</h4>
+									</div>
+								</div>	
+							</div>
+
+							<div class="secondColumnLineBox">
+								<h4 class="tecnologia">Conexão <span>${ex["tecnologia"]}</span></h4>
+								<h4 class="fibra">100% Fibra Óptica</h4>
+								<h4 class="velocidade">${returnSpeedHtml(ex["megaBytes"])}</h4>
+							</div>
+						</div>
+
+						<div class="captionBox">
+							<p class="caption">${ex["legenda"]}</p>
+							<div class="includedApps">
+								<span>Inclui: </span>
+								<div class="flexIncludedApps"></div>
+							</div>
+						</div>
+
+						<hr class="line">
+
+						<div class="contratarBox">
+							<p class="price">Preço Mensal: <span>${ex["valor"]}R$</span></p>
+							<button class="contratarPlanoBtn">Adquira Já!</button>
+						</div>
+
+						<small class="taxa">Taxa de Instalação de 50,00R$</small>
+						</div>
+
+
+						`)
+}
+
 export function verifyCepRegister() {
 	const verifyCep = localStorage.getItem("CEP")
 	const verifyLogradouro = localStorage.getItem("Bairro")
@@ -144,10 +226,10 @@ export function returnIcons(extras) {
 	const iconesMapeados = isArray.map((e) => {
 		let iconItem
 
-		if (extras) { 
-		iconItem = keys.find(element => element.toLowerCase() === e.toLowerCase())
+		if (extras) {
+			iconItem = keys.find(element => element.toLowerCase() === e.toLowerCase())
 
-		return icon[iconItem]
+			return icon[iconItem]
 		}
 	})
 

@@ -1,10 +1,18 @@
 export const icon = {
-    "HboMax" : `<i class='appIcon' title="HBO-MAX" name="hbomax">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" id="Layer_1"><defs><style>.cls-3,.cls-4{fill:none;stroke:#ffffff;stroke-linejoin:round}.cls-4{stroke-width:12px}.cls-3{stroke-width:8px}.cls-3,.cls-4{stroke-linecap:round}</style></defs>
-		<path d="M0 0h192v192H0z" style="fill:none"/><circle cx="137.82" cy="71.24" r="9.4"/><path d="M137.82 56.81c7.96 0 14.43 6.48 14.43 14.43s-6.48 14.43-14.43 14.43-14.43-6.48-14.43-14.43 6.48-14.43 14.43-14.43m0-12c-14.6 0-26.43 11.83-26.43 26.43s11.83 26.43 26.43 26.43 26.43-11.83 26.43-26.43-11.83-26.43-26.43-26.43Z"/><path d="M43.23 51.86v38.77m23.34-38.77v38.77M43.52 71.24h23.05" class="cls-4"/><path d="M82.91 51.86v38.77h16.55c4.41-.36 7.91-4.45 8.06-9.4.15-4.88-2.99-9.19-7.29-9.99 4.3-.79 7.44-5.1 7.29-9.99-.14-4.84-3.47-8.88-7.77-9.4H82.9Z" style="stroke-width:12px;stroke:#ffffff;stroke-linejoin:round;fill:none"/><path d="M82.91 71.24h17.33" class="cls-4"/><path d="M47.68 116.06c-8.48-13.02-15.72-12.3-20.67-8.71-4.5 3.27-7.01 8.82-7.01 14.58v24.68m27.68-.01v-30.54" class="cls-3"/><path d="M75.36 146.6v-23.47c0-6.09-2.65-11.94-7.38-15.45-12.13-9-20.31 8.38-20.31 8.38m76.49-10.97v42.1" class="cls-3"/><ellipse cx="105.28" cy="126.63" class="cls-3" rx="18.4" ry="20.56"/><path d="M135.76 104.9 172 147.19m0-42.29-36.24 42.29" class="cls-3"/>
-		</svg></i>`,
+    "HboMax": `<i class='appIcon' title="HBO-MAX" name="hbomax">
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="600.000000pt" height="600.000000pt" viewBox="0 0 600.000000 600.000000" preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(0.000000,600.000000) scale(0.100000,-0.100000)" fill="#FFFFFF" stroke="none">
+            <path d="M4675 5144 c-228 -27 -390 -84 -568 -202 -140 -92 -298 -263 -380 -412 -39 -69 -39 -69 -56 30 -35 212 -252 456 -465 523 -70 22 -78 22 -676 22 l-605 0 -3 -1202 -2 -1203 565 0 c486 0 576 2 638 16 292 66 516 308 562 608 l6 39 31 -54 c85 -149 234 -312 370 -406 213 -148 426 -213 693 -213 204 0 364 35 525 113 308 152 532 408 647 743 l38 109 0 265 c0 263 0 266 -28 355 -81 255 -240 481 -452 640 -89 67 -284 161 -395 190 -144 37 -322 53 -445 39z m-1727 -588 c65 -34 102 -104 102 -191 0 -66 -24 -119 -74 -163 -44 -39 -79 -44 -271 -40 l-150 3 -3 203 -2 202 185 0 c140 0 193 -3 213 -14z m2032 -53 c180 -59 318 -192 387 -371 35 -90 44 -264 18 -362 -56 -215 -235 -391 -455 -446 -48 -12 -92 -15 -170 -11 -128 6 -203 30 -306 99 -175 117 -274 301 -274 510 0 309 232 569 545 612 60 8 182 -6 255 -31z m-1417 -741 c-1 -2 -19 14 -41 36 -45 45 -140 112 -159 112 -21 0 -14 18 10 26 30 9 149 86 167 109 14 16 15 3 20 -131 3 -82 4 -150 3 -152z m-614 -117 c38 -19 77 -66 91 -111 20 -60 8 -147 -26 -196 -51 -72 -73 -78 -281 -78 l-183 0 0 200 0 200 185 0 c144 0 192 -3 214 -15z"/>
+            <path d="M4660 4386 c-203 -57 -350 -251 -350 -460 1 -135 40 -232 132 -332 185 -198 494 -205 687 -15 104 104 147 219 139 377 -4 80 -10 103 -42 170 -61 129 -174 224 -309 260 -63 17 -196 17 -257 0z"/>
+            <path d="M37 5103 c-4 -3 -7 -546 -7 -1205 l0 -1198 340 0 340 0 0 465 0 465 210 0 210 0 2 -462 3 -463 327 -3 328 -2 0 1205 0 1205 -327 -2 -328 -3 -3 -447 -2 -448 -210 0 -210 0 -2 448 -3 447 -331 3 c-182 1 -333 -1 -337 -5z"/>
+            <path d="M720 2387 c-82 -28 -178 -82 -261 -146 -75 -58 -77 -57 -78 57 l-1 72 -173 -2 -172 -3 -3 -758 -2 -757 175 2 176 3 2 509 2 508 40 35 c81 71 217 153 287 174 114 35 172 14 218 -77 l25 -49 3 -552 3 -553 174 0 175 0 0 511 0 510 32 27 c124 106 267 187 349 198 68 9 131 -21 161 -78 l23 -43 5 -560 5 -560 178 -3 178 -2 -4 577 c-4 625 -6 648 -61 769 -35 77 -117 155 -191 184 -73 27 -216 38 -295 21 -85 -18 -205 -83 -319 -171 -57 -45 -104 -80 -106 -78 -1 2 -11 24 -23 49 -25 59 -83 123 -140 156 -96 57 -266 70 -382 30z"/>
+            <path d="M2940 2390 c-149 -39 -299 -137 -396 -258 -63 -80 -140 -240 -158 -334 -75 -368 95 -727 422 -892 86 -43 192 -66 307 -66 179 0 322 52 436 157 31 29 59 53 63 53 3 0 6 -45 6 -100 l0 -100 175 0 175 0 0 760 0 760 -175 0 -175 0 0 -85 c0 -47 -3 -85 -6 -85 -3 0 -33 24 -66 54 -72 65 -181 121 -274 141 -97 21 -242 18 -334 -5z m320 -311 c205 -47 360 -240 360 -448 -1 -316 -313 -541 -609 -438 -269 94 -390 399 -258 652 94 179 310 279 507 234z"/>
+            <path d="M4110 2365 c0 -17 168 -246 275 -375 44 -52 137 -154 208 -227 l128 -131 -111 -112 c-170 -171 -417 -473 -525 -642 l-17 -28 218 0 219 0 63 95 c103 155 349 445 378 445 28 0 280 -299 377 -447 l61 -93 218 0 c120 0 218 3 218 6 0 11 -148 212 -246 334 -105 132 -257 299 -347 382 l-61 56 140 144 c77 80 183 198 236 264 102 127 238 313 238 326 0 4 -98 8 -217 8 l-218 0 -43 -70 c-56 -90 -191 -263 -284 -364 l-74 -79 -86 94 c-120 130 -197 228 -260 331 l-53 87 -217 1 c-120 0 -218 -2 -218 -5z"/>
+            </g>
+        </svg>
+    </i>`,
 
-    "DisneyPlus" : `<i class='appIcon' title="Disney-Plus" name='disneyplus'>
+    "DisneyPlus": `<i class='appIcon' title="Disney-Plus" name='disneyplus'>
 	<svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 1200.000000 1200.000000" preserveAspectRatio="xMidYMid meet">
 		<g transform="translate(0.000000,1200.000000) scale(0.100000,-0.100000)" fill="#07a1b2" stroke="none">
 		<path d="M5940 8410 c-36 -5 -108 -13 -160 -18 -114 -12 -228 -29 -290 -44 -25 -6 -65 -14 -90 -18 -25 -4 -65 -12 -90 -19 -25 -7 -67 -18 -95 -26 -127 -33 -244 -70 -335 -105 -30 -12 -66 -25 -80 -30 -50 -16 -178 -73 -295 -131 -112 -56 -143 -73 -235 -124 -97 -56 -356 -237 -459 -322 -64 -53 -187 -167 -274 -254 -139 -138 -158 -161 -155 -186 2 -20 9 -29 26 -31 18 -3 50 22 145 116 147 145 222 208 390 334 248 185 555 350 862 465 22 8 55 21 73 29 18 8 39 14 47 14 8 0 29 6 47 14 18 8 62 22 98 31 36 10 85 23 110 30 42 13 102 26 265 59 200 41 440 61 725 60 327 -1 575 -27 820 -86 25 -6 63 -14 85 -18 22 -3 56 -11 75 -17 19 -6 62 -19 95 -28 33 -10 76 -23 95 -30 19 -7 68 -23 108 -35 40 -13 75 -27 78 -31 3 -5 14 -9 26 -9 11 0 32 -6 46 -14 15 -7 43 -20 62 -29 102 -43 254 -118 335 -164 22 -12 49 -27 60 -33 11 -6 34 -19 50 -30 17 -11 37 -23 45 -27 32 -15 183 -121 298 -210 211 -163 434 -390 600 -610 34 -45 62 -85 62 -88 0 -4 13 -24 28 -44 33 -42 138 -215 171 -281 12 -25 26 -52 31 -60 18 -28 93 -204 147 -342 13 -36 25 -50 47 -58 39 -14 139 -13 171 2 31 14 32 36 4 108 -11 30 -24 66 -28 80 -20 64 -181 389 -239 482 -75 120 -102 161 -144 218 -26 36 -51 70 -56 75 -4 6 -37 48 -72 95 -122 163 -450 476 -637 608 -25 18 -69 49 -97 70 -27 20 -58 42 -67 47 -9 6 -68 41 -130 78 -63 37 -121 72 -129 77 -33 20 -242 120 -327 157 -95 40 -94 40 -220 87 -21 8 -85 28 -143 45 -58 18 -126 38 -151 46 -26 8 -55 15 -64 15 -10 0 -41 6 -69 14 -79 23 -190 44 -311 60 -60 8 -148 20 -195 27 -103 14 -600 21 -690 9z"/>
@@ -20,7 +28,7 @@ export const icon = {
 	</svg>
 		</i>`,
 
-    "Looke" : `<i class='appIcon' title="Looke (Estudar)" name='looke'>
+    "Looke": `<i class='appIcon' title="Looke (Estudar)" name='looke'>
 	<svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 600.000000 155.000000" preserveAspectRatio="xMidYMid meet">
 		<g transform="translate(0.000000,155.000000) scale(0.100000,-0.100000)" fill="#0775f7" stroke="none">
 		<path d="M167 1540 l-147 -5 -1 -473 c0 -530 -3 -503 73 -565 82 -66 211 -39 258 54 20 38 21 56 20 506 0 477 -2 496 -39 491 -9 -1 -82 -5 -164 -8z"/>
@@ -35,7 +43,7 @@ export const icon = {
 	</svg>
 	</i>`,
 
-    "IndieFlix" : `<i class='appIcon' title="IndieFlix" name='indieflix'>
+    "IndieFlix": `<i class='appIcon' title="IndieFlix" name='indieflix'>
 	<svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 1188.000000 381.000000" preserveAspectRatio="xMidYMid meet">
 		<g transform="translate(0.000000,381.000000) scale(0.100000,-0.100000)" fill="#dd1c25" stroke="none">
 		<path d="M4323 2893 l-163 -3 0 -400 c0 -233 -4 -401 -9 -405 -5 -3 -31 13 -57 36 -27 23 -69 50 -94 61 -54 24 -208 57 -268 58 -50 0 -163 -25 -205 -46 -16 -8 -33 -14 -38 -14 -4 0 -30 -15 -56 -32 -118 -82 -195 -194 -249 -363 -16 -49 -19 -89 -19 -220 1 -161 8 -202 50 -300 7 -16 16 -37 19 -45 44 -102 169 -225 281 -274 180 -80 457 -44 589 76 22 20 44 34 48 32 4 -3 8 -27 8 -55 l0 -49 180 0 180 0 -2 972 c-3 857 -5 973 -18 973 -8 0 -88 -1 -177 -2z m-401 -1007 c29 -8 66 -21 82 -29 39 -21 126 -115 126 -137 0 -10 7 -34 15 -53 29 -70 15 -195 -32 -282 -20 -39 -75 -89 -127 -116 -33 -18 -59 -22 -136 -23 -83 -1 -100 2 -135 23 -142 85 -203 235 -162 393 7 27 18 53 25 60 7 7 12 18 12 24 0 20 50 74 93 101 80 51 151 62 239 39z"/>
@@ -53,7 +61,7 @@ export const icon = {
 	</svg>
 	</i>`,
 
-    "skyPlusLight" : `<i class='appIcon' title="SKY-Plus (Light)" name='skypluslight'>
+    "skyPlusLight": `<i class='appIcon' title="SKY-Plus (Light)" name='skypluslight'>
 	<svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 1203.000000 1203.000000" preserveAspectRatio="xMidYMid meet">
 		<g transform="translate(0.000000,1203.000000) scale(0.100000,-0.100000)" fill="red" stroke="none">
 		<path d="M3305 7225 c-27 -7 -64 -14 -81 -14 -18 -1 -45 -8 -60 -16 -16 -8 -39 -15 -51 -15 -12 0 -34 -6 -50 -14 -15 -8 -57 -29 -93 -47 -107 -53 -166 -97 -245 -181 -70 -76 -145 -185 -145 -212 0 -7 -7 -21 -15 -32 -8 -10 -15 -28 -15 -39 0 -11 -8 -33 -17 -50 -25 -45 -26 -347 -1 -390 10 -16 18 -35 18 -42 0 -15 30 -71 50 -93 8 -9 24 -27 36 -41 29 -33 96 -94 114 -102 8 -4 29 -16 45 -26 40 -26 104 -58 135 -66 14 -4 30 -11 35 -15 6 -4 26 -11 45 -15 19 -4 40 -11 45 -15 6 -4 29 -10 53 -14 24 -3 51 -10 60 -15 9 -5 42 -14 72 -20 160 -33 249 -72 305 -132 26 -28 30 -39 29 -91 -1 -53 -4 -62 -35 -94 -19 -20 -59 -48 -89 -62 -53 -26 -62 -27 -210 -25 -85 0 -176 6 -202 12 -27 6 -68 15 -93 21 -24 5 -52 13 -62 18 -31 16 -87 40 -107 46 -27 9 -156 97 -156 107 0 5 -6 9 -14 9 -7 0 -19 7 -26 15 -21 25 -33 17 -90 -57 -53 -69 -91 -115 -137 -166 -13 -14 -23 -28 -23 -31 0 -3 -10 -17 -22 -31 -38 -42 -114 -134 -122 -147 -4 -7 -2 -21 3 -32 13 -23 171 -140 231 -171 25 -12 52 -26 60 -31 8 -5 26 -14 40 -19 14 -6 32 -14 40 -19 9 -5 31 -12 50 -16 19 -4 41 -11 50 -16 22 -11 97 -30 160 -39 30 -4 80 -13 110 -19 75 -17 447 -9 555 12 139 27 161 34 272 85 69 32 138 75 197 126 61 53 166 186 192 246 9 20 27 40 40 47 24 11 24 11 18 -30 -4 -23 -11 -62 -16 -87 -5 -25 -13 -72 -18 -105 -4 -33 -12 -71 -18 -85 -5 -14 -11 -52 
@@ -76,7 +84,7 @@ export const icon = {
 	</svg>
 	</i>`,
 
-    "skyPlus" : `<i class='appIcon' title="SKY-Plus" name='skyplus'>
+    "skyPlus": `<i class='appIcon' title="SKY-Plus" name='skyplus'>
 	<svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 394.000000 128.000000"  preserveAspectRatio="xMidYMid meet"> 
 	<g transform="translate(0.000000,128.000000) scale(0.050000,-0.050000)" fill="#dd1c25" stroke="none"> 
 	<path d="M1240 2538 c-464 -53 -788 -320 -871 -718 -84 -402 120 -641 668 -783 370 -96 461 -172 386 -320 -97 -194 -579 -168 -907 50 -136 90 -113 96 -227 -52 -54 -69 -103 -129 -109 -135 -6 -5 -46 -53 -89 -106 l-77 -96 68 -70 c154 -160 500 -280 868 -301 504 -29 893 146 1070 480 89 166 99 128 40 -157 -22 -107 -40 -207 -40 -223 0 -23 60 -27 355 -22 l355 5 23 140 c13 77 33 190 44 250 11 61 35 200 55 310 51 290 36 298 278 -160 52 -99 140 -263 194 -365 l99 -185 429 0 429 0 -48 75 c-27 41 -96 161 -154 265 -170 307 -202 363 -264 468 -32 55 -89 155 -126 222 l-66 121 74 80 c41 43 149 167 241 274 91 107 171 195 179 194 7 0 96 -151 197 -336 l184 -335 -99 -495 c-54 -272 -99 -503 -99 -514 0 -39 696 -24 707 16 6 19 26 116 44 215 18 99 54 290 80 423 l47 244 314 396 c172 219 431 541 574 717 143 176 269 331 280 345 15 20 -68 25 -399 25 l-417 0 -30 -50 c-70 -118 -512 -708 -530 -708 -11 -1 -106 167 -211 373 l-191 375 -362 5 -361 6 -146 -186 c-277 -351 -685 -835 -705 -835 -10 0 -14 25 -7 55 36 174 193 949 193 956 0 5 -161 9 -357 9 l-358 0 -13 -100 c-16 -119 -15 -119 -165 -29 -194 117 -643 224 -864 206 -18 -1 -100 -10 -183 -19z m1071 -908 c-47 -242 -92 -474 -99 -515 -14 -79 -52 -104 -52 -35 0 223 -251 407 -708 519 -371 91 -428 130 -368 256 82 173 462 167 848 -14 l167 -78 55 65 c31 36 92 111 136 167 115 146 116 123 21 -365z"/> 
@@ -85,7 +93,7 @@ export const icon = {
 	</svg>
 	</i>`,
 
-    "playKidsPlus" : `<i class='appIcon' title="PlayKids-Plus" name='playkidsplus'>
+    "playKidsPlus": `<i class='appIcon' title="PlayKids-Plus" name='playkidsplus'>
 		<svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400.000000 400.000000" preserveAspectRatio="xMidYMid meet"> 
 		<g transform="translate(0.000000,400.000000) scale(0.100000,-0.100000)" fill="#9d16a6" stroke="none"> 
 		<path d="M1225 2928 c-3 -13 -4 -201 -3 -418 l3 -395 100 0 100 0 0 415 0 415 -97 3 c-94 3 -98 2 -103 -20z"/> 
@@ -97,7 +105,7 @@ export const icon = {
 		</svg>
 	</i>`,
 
-    "ubook" : `<i class='appIcon' title="Ubook" name='ubook'>
+    "ubook": `<i class='appIcon' title="Ubook" name='ubook'>
 		<svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300.000000 300.000000" preserveAspectRatio="xMidYMid meet">
     <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)" fill="#f73d00" stroke="none">
         <path d="M635 1864 c-14 -15 -16 -47 -13 -278 l3 -261 28 -47 c55 -95 150 -149 259 -150 204 0 346 196 281 388 -24 70 -110 154 -182 177 -74 24 -144 21 -213 -7 l-58 -24 0 89 c0 76 -3 92 -20 109 -24 24 -63 26 -85 4z m348 -275 c73 -38 123 -131 108 -201 -32 -140 -160 -201 -273 -129 -155 98 -88 339 95 341 27 0 58 -5 70 -11z"
@@ -114,7 +122,7 @@ export const icon = {
 		</svg>
 	</i>`,
 
-    "kaspersky_s" : `<i class='appIcon' title="Kaspersky-Standard" name='kaspersky_s'>
+    "kaspersky_s": `<i class='appIcon' title="Kaspersky-Standard" name='kaspersky_s'>
 		<?xml version="1.0" standalone="no"?>
     <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600.000000 338.000000" preserveAspectRatio="xMidYMid meet">
@@ -139,7 +147,7 @@ export const icon = {
     </svg>
 	</i>`,
 
-    "kaspersky_a" : `<i class='appIcon' title="Kaspersky-Advanced" name='kaspersky_a'>
+    "kaspersky_a": `<i class='appIcon' title="Kaspersky-Advanced" name='kaspersky_a'>
 		<?xml version="1.0" standalone="no"?>
     <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600.000000 338.000000" preserveAspectRatio="xMidYMid meet">
@@ -164,7 +172,7 @@ export const icon = {
     </svg>
 	</i>`,
 
-    "kaspersky_p" : `<i class='appIcon' title="Kaspersky-Premium" name='kaspersky_p'>
+    "kaspersky_p": `<i class='appIcon' title="Kaspersky-Premium" name='kaspersky_p'>
 		<?xml version="1.0" standalone="no"?>
     <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600.000000 338.000000" preserveAspectRatio="xMidYMid meet">
@@ -189,7 +197,7 @@ export const icon = {
     </svg>
 	</i>`,
 
-    "deezer" : `<i class='appIcon' title="Deezer" name='deezer'>
+    "deezer": `<i class='appIcon' title="Deezer" name='deezer'>
 		<svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
     <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#6800d7" stroke="none">
         <path d="M1708 4461 c-50 -39 -110 -191 -139 -348 -7 -40 -16 -73 -19 -73 -3 0 -13 32 -22 72 -33 137 -79 195 -121 154 -35 -36 -73 -177 -99 -366 -20 -147 -17 -664 5 -815 37 -264 94 -393 149 -338 10 11 29 46 43 78 27 67 24 74 50 -98 41 -265 119 -447 193 -447 58 0 127 126 168 305 l18 80 8 -75 c59 -555 147 -792 243 -653 27 40 70 165 81 234 10 62 21 55 28 -21 10 -111 55 -317 92 -419 75 -210 160 -271 248 -178 71 73 135 258 171 495 29 191 29 189 49 97 34 -148 83 -245 124 -245 77 2 150 242 182 595 7 72 14 137 17 145 3 8 15 -25 28 -75 86 -335 194 -378 289 -116 27 74 69 268 81 373 8 61 19 68 30 17 9 -41 42 -96 62 -103 28 -11 62 34 87 113 31 99 54 256 66 466 27 434 -44 946 -134 963 -39 8 -79 -64 -107 -193 l-12 -60 -9 40 c-58 253 -105 373 -160 401 -23 12 -36 13 -53 6 -73 -33 -137 -206 -180 -487 -10 -60 -18 -111 -20 -113 -1 -2 -10 39 -20 90 -22 121 -60 243 -91 291 -25 38 -49 46 -83 27 -27 -14 -69 -118 -96 -237 -27 -117 -65 -395 -65 -471 0 -26 -5 -54 -10 -62 -8 -13 -10 -12 -10 4 0 32 -41 157 -72 224 -104 219 -230 179 -318 -101 -18 -56 -35 -110 -39 -121 -4 -10 -15 59 -24 155 -53 540 -170 766 -267 519 -25 -63 -70 -251 -70 -293 0 -53 -18 -17 -25 50 -25 241 -114 498 -181 523 -34 13 -38 13 -66 -9z"
@@ -206,7 +214,7 @@ export const icon = {
 </svg>
 	</i>`,
 
-    "curta_on" : `<i class='appIcon' title="Curta!On" name='curta_on'>
+    "curta_on": `<i class='appIcon' title="Curta!On" name='curta_on'>
 		<?xml version="1.0" standalone="no"?>
     <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600.000000 309.000000" preserveAspectRatio="xMidYMid meet">
@@ -238,7 +246,7 @@ export const icon = {
     </svg>
 	</i>`,
 
-    "socialComics" : `<i class='appIcon' title="Social-Comics" name='socialcomics'>
+    "socialComics": `<i class='appIcon' title="Social-Comics" name='socialcomics'>
 		<?xml version="1.0" standalone="no"?>
     <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600.000000 382.000000" preserveAspectRatio="xMidYMid meet">
@@ -256,7 +264,7 @@ export const icon = {
     </svg>
 	</i>`,
 
-    "docway" : `<i class='appIcon' title="DocWay Documentários" name='docway'>
+    "docway": `<i class='appIcon' title="DocWay Documentários" name='docway'>
 		<?xml version="1.0" standalone="no"?>
     <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410.000000 275.000000" preserveAspectRatio="xMidYMid meet">
@@ -274,7 +282,7 @@ export const icon = {
     </svg>
 	</i>`,
 
-    "hotgo" : `<i class='appIcon' title="HotGO" name='hotgo'>
+    "hotgo": `<i class='appIcon' title="HotGO" name='hotgo'>
 		<svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600.000000 600.000000" preserveAspectRatio="xMidYMid meet">
     <g transform="translate(0.000000,600.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
         <path d="M1195 5989 c-457 -59 -869 -360 -1064 -779 -47 -102 -84 -215 -108 -330 -17 -80 -18 -197 -18 -1880 0 -1683 1 -1800 18 -1880 118 -564 537 -984 1095 -1097 81 -17 202 -18 1877 -18 2001 0 1859 -5 2077 71 204 71 370 175 523 329 197 196 323 433 382 715 17 80 18 197 18 1880 0 1722 -1 1799 -19 1885 -58 278 -186 516 -381 710 -192 192 -414 313 -690 378 -90 21 
@@ -290,7 +298,7 @@ export const icon = {
 </svg>
 	</i>`,
 
-    "primeVideo" : `<i class='appIcon' title="Amazon Prime-Video" name='primevideo'>
+    "primeVideo": `<i class='appIcon' title="Amazon Prime-Video" name='primevideo'>
 		<svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
     <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#01a8df" stroke="none">
         <path d="M499 4866 c-102 -27 -181 -95 -228 -196 l-26 -55 0 -2070 c0 -1971 1 -2072 18 -2122 23 -66 75 -133 132 -172 97 -66 -57 -62 2190 -59 l2040 3 58 29 c102 52 167 141 187 257 7 45 10 665 8 2099 l-3 2035 -33 67 c-38 77 -92 130 -171 167 l-56 26 -2035 2 c-1591 1 -2045 -1 -2081 -11z m4163 -33 c66 -30 133 -96 165 -162 l28 -56 0 -2050 c0 -1997 0 -2051 -19 -2100 -24 -62 -95 -139 -161 -173 l-50 -27 -2065 0 -2065 0 -50 27 c-65 34 -128 100 -157 163 l-23 50 -3 2035 c-2 2246 -7 2093 61 2181 45 59 98 99 159 120 51 18 137 18 2093 16 l2040 -2 47 -22z"
@@ -320,7 +328,7 @@ export const icon = {
 </svg>
 	</i>`,
 
-    "appleTvPlus" : `<i class='appIcon' title="AppleTV-Plus" name='appletvplus'>
+    "appleTvPlus": `<i class='appIcon' title="AppleTV-Plus" name='appletvplus'>
 		<?xml version="1.0" standalone="no"?>
     <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320.000000 320.000000" preserveAspectRatio="xMidYMid meet">

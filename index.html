@@ -44,7 +44,6 @@
 				<div class="sections">
 					<a href="#home" id="homeNav" class="grayText">Início</a>
 					<a href="#planos" id="planosNav" class="grayText">Planos</a>
-					<a href="#" id="contatoNav" class="grayText">Contato</a>
 				</div>
 
 				<div class="network">
@@ -105,36 +104,32 @@
 
 			<hr class="lineDivisoria">
 
-			<section id="planos" data-target=".plano">
+			<section id="planos">
 
-				<h2 class="sectionTitle">NOSSOS PLANOS</h2>
+				<div class="plansOptionsContainer">
+					<div class="plansOptions">
+						<div class="choicePlansContainer">
+							<button class="planTypeBtn" data="combos">Combos</button>
+							<button class="planTypeBtn" data="basics">Básicos</button>
+						</div>
+						
+						<div class="columnPlansOptions">
 
-			<div class="sideBarBox">
-				<aside class="sidebar whiteText">
-					<span class="sidebarOptions" data-target=".comboSection">COMBOS</span>
-					<span class="sidebarOptions" data-target=".basicoSection">PLANOS BÁSICOS</span>
-				</aside>
-			</div>
+						</div>
 
-			<h2 class="sectionTitle comboSection" style="display: none;">NOSSOS COMBOS</h2>
+							<!-- AQUI FICARÃO AS OPCOES DE PLANOS DISPONIVEIS, SERAO SETADOS PELO JAVASCRIPT -->
+					</div>
 
-			<div class="boxCombos comboSection" style="display: none;">
+					
+					
+				</div>
+
+				<div class="plansContainer">
+					
+
+				</div>
 				
-				<div class="flexCombos whiteText">
-					<div id="destaqueCombo" class="plano destaque">
-				</div>
-				</div>
-			</div>
-
-			<hr class="lineDivisoria">
-
-			<h2 class="sectionTitle basicoSection" style="display: none;">NOSSOS PLANOS</h2>
-
-			<div class="flexPlanos basicoSection whiteText" style="display: none;">
-				<div id="destaqueBasico" class="plano destaque">
-				</div>
-			</div>
-		</section>
+			</section>
 
 		<section id="numeros" data-target=".boxNumbers">
 

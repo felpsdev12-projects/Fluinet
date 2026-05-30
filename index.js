@@ -7,7 +7,6 @@ let currentIndex = 0;
 let moverPara = 0;
 
 const ofertas = await module.carregarOfertas()
-divOfertas.style.boxShadow = `0 0 30px rgba(${ofertas[currentIndex]["bColor"]}, 1)`
 
 function scrollOferta(direction) {
 	const { clientWidth, scrollWidth, scrollLeft } = divOfertas
@@ -33,8 +32,6 @@ function scrollOferta(direction) {
 		}
 	}
 
-	divOfertas.style.boxShadow = `0 0 30px rgba(${ofertas[currentIndex]["bColor"]}, 1)`
-
 	divOfertas.scrollBy({
 		left: moverPara,
 		behavior: "smooth"
@@ -58,30 +55,5 @@ function autoScroll(time) {
 		scrollOferta(300); // AutoScroll sempre avança
 	}, time);
 }
-
-const sidebarOptions = document.querySelectorAll(".sidebarOptions")
-const comboSection = document.querySelectorAll(".comboSection")
-const basicoSection = document.querySelectorAll(".basicoSection")
-
-
-sidebarOptions.forEach((option) => {
-	option.onclick = () => {
-		const getAttribute = option.getAttribute("data-target")
-
-		if (getAttribute === ".comboSection") {
-			comboSection.forEach((e) => {
-				e.style.display == "none" ? e.style.display = "" : e.style.display = "none"
-			})
-		} else if (getAttribute === ".basicoSection") {
-			basicoSection.forEach((e) => {
-				e.style.display == "none" ? e.style.display = "" : e.style.display = "none"
-			})
-		}
-
-		option.classList.contains("sidebarOptionSelected") ? 
-		option.classList.remove("sidebarOptionSelected") :
-		option.classList.add("sidebarOptionSelected")
-	}
-})
 
 autoScroll(7000);
