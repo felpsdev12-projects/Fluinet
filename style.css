@@ -360,6 +360,7 @@ section#planos {
 		.plansOptions {
 			display: flex;
 			flex-direction: column;
+			align-items: center;
 			gap: 40px;
 
 			p.avaliablePlans {
