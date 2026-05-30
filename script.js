@@ -172,18 +172,22 @@ document.addEventListener("DOMContentLoaded", async () => {
         let appsTable = [];
         let isConfirmed = false;
 
+        let appsBox = flexPlanInfo.querySelector(".appsBox");
+        if (!appsBox) {
+            appsBox = document.createElement("div");
+            appsBox.className = "appsBox";
+            flexPlanInfo.appendChild(appsBox);
+        }
+
         if (contratarBox) contratarBox.style.display = "none";
         if (taxaTxt) taxaTxt.style.display = "none";
 
-        const appsBox = document.createElement("div");
-        appsBox.className = "appsBox";
+        appsBox.style.display = "";
         appsBox.innerHTML = `
             <small class="appsChoiceText">Escolha ${ex["escolhas"]} Apps </small>
             <div class="appsContainer">${returnIcons(ex["apps"])}</div>
             <button class="confirmAppsBtn" style="display:none">Confirmar</button>
         `;
-
-        if (flexPlanInfo) flexPlanInfo.appendChild(appsBox);
 
         const appsIcons = appsBox.querySelectorAll(".appsContainer i");
         const confirmBtn = appsBox.querySelector(".confirmAppsBtn");
@@ -215,6 +219,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     if (flexIncludedApps) {
                         flexIncludedApps.innerHTML = `${returnIcons(appsTable)}`;
                     }
+
                     isConfirmed = true;
                 };
 
@@ -226,6 +231,29 @@ document.addEventListener("DOMContentLoaded", async () => {
                 }
             };
         });
+    }
+
+    function setupChoiceButton(ex) {
+        const contratarBox = plansContainer.querySelector(".contratarBox");
+        if (!contratarBox) return;
+
+        let choiceAppsBtn = contratarBox.querySelector(".choiceAppsBtn");
+        if (!choiceAppsBtn) {
+            choiceAppsBtn = document.createElement("i");
+            choiceAppsBtn.className = "choiceAppsBtn";
+            choiceAppsBtn.innerHTML = `
+                <i title="Adicionar Apps" class="choiceAppsBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                        <path d="M720-160v-120H600v-80h120v-120h80v120h120v80H800v120h-80Zm-600 40q-33 0-56.5-23.5T40-200v-560q0-33 23.5-56.5T120-840h560q33 0 56.5 23.5T760-760v200h-80v-80H120v440h520v80H120Zm0-600h560v-40H120v440h520v80H120Zm0 0v-40 40Z"/>
+                    </svg>
+                </i>
+            `;
+            contratarBox.appendChild(choiceAppsBtn);
+        }
+
+        choiceAppsBtn.onclick = () => {
+            pushHtml(ex);
+        };
     }
 
     getAllPlansBank["combos"].forEach((ex) => {
@@ -250,7 +278,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         columnPlansOptions.appendChild(div);
         plansContainer.innerHTML = generatePlanHtml(ex);
-        pushHtml(ex); 
+        
+        if (ex["custom"]) {
+            setupChoiceButton(ex);
+            pushHtml(ex);
+        }
     });
 
     planTypeBtns.forEach((e) => {
@@ -312,24 +344,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                         plansContainer.style.display = "";
                         plansContainer.innerHTML = generatePlanHtml(ex);
 
-                        const contratarBox = plansContainer.querySelector(".contratarBox");
-
-                        if (ex["custom"] && contratarBox) {
-                            const choiceAppsBtn = document.createElement("i");
-                            choiceAppsBtn.className = "choiceAppsBtn";
-                            choiceAppsBtn.innerHTML = `
-                                <i title="Adicionar Apps" class="choiceAppsBtn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                                        <path d="M720-160v-120H600v-80h120v-120h80v120h120v80H800v120h-80Zm-600 40q-33 0-56.5-23.5T40-200v-560q0-33 23.5-56.5T120-840h560q33 0 56.5 23.5T760-760v200h-80v-80H120v440h520v80H120Zm0-600h560v-40H120v440h520v80H120Zm0 0v-40 40Z"/>
-                                    </svg>
-                                </i>
-                            `;
-
-                            choiceAppsBtn.onclick = () => {
-                                pushHtml(ex);
-                            };
-
-                            contratarBox.appendChild(choiceAppsBtn);
+                        if (ex["custom"]) {
+                            setupChoiceButton(ex);
                             pushHtml(ex);
                         }
                     };
