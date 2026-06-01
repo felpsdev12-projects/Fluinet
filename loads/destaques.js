@@ -77,7 +77,6 @@ const colorResult = (e) => {
 document.querySelector(".totalAverage").innerHTML = `${totalStars(finalResult)}`
 
 document.querySelector(".totalMedia").textContent = finalResult
-document.querySelector(".totalMedia").style.color = `${colorResult(finalResult)}`
 
 feedbacks.forEach((obj) => {
 
@@ -92,7 +91,7 @@ feedbacks.forEach((obj) => {
 					${totalStars(obj["avaliacao"])}
 				</div>
 				<h4>${obj["data"]}</h4>
-				<h3 class="nota" style="color: ${colorResult(obj["avaliacao"])}">${obj["avaliacao"]}</h3>
+				<h3 class="nota yg_outlined">${obj["avaliacao"]}</h3>
 			</div>
 				<p class="content">${obj["feedback"]}</p>			
 	`

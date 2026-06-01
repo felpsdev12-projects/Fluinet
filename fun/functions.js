@@ -5,7 +5,8 @@ import {
 } from "../utils/module.js";
 
 import {
-	icon
+	icon,
+	caption
 } from "./constants.js";
 
 const cepInput = document.querySelector(".cepInput");
@@ -18,10 +19,25 @@ const returnSpeedHtml = (el) => {
 	return result
 }
 
-export function generatePlanHtml(ex) {
+export function getAppContext(appName, data) {
+	return (
+		`
+			<div class="appIconFlex">
+			${returnIcons(appName)}
+				<div class="appNameFlex">
+					<h3 class="appName">${appName.toUpperCase()}</h3>
+					<h3 class="streamType cyan_outlined">${data}</h3>
+				</div>
+			</div>
+		`
+	)
+}
+
+export function generatePlanHtml(ex, type) {
 
 	let recomendedHtml = ex["destaque"] ? "Recomendado" : "Básico"
-	let thisTextColor = ex["destaque"] ? "extra" : ""
+	let thisTextColor = ex["destaque"] ? "cyanGradient" : ""
+	let display = type == "combo" ? "" : "none"
 
 	return (
 	`<div class="imageContainer">
@@ -74,11 +90,12 @@ export function generatePlanHtml(ex) {
 
 						<div class="captionBox">
 							<p class="caption">${ex["legenda"]}</p>
-							<div class="includedApps">
+
+							<div class="includedApps" style="display:${display}">
 								<span>Inclui: </span>
 								<div class="flexIncludedApps"></div>
-							</div>
-						</div>
+							</div>	
+						</div>	
 
 						<hr class="line">
 
@@ -87,7 +104,7 @@ export function generatePlanHtml(ex) {
 							<button class="contratarPlanoBtn">Adquira Já!</button>
 						</div>
 
-						<small class="taxa">Taxa de Instalação de 50,00R$</small>
+						<small class="taxa">Taxa de Instalação de R$ 50,00</small>
 						</div>
 
 
@@ -234,4 +251,12 @@ export function returnIcons(extras) {
 	})
 
 	return iconesMapeados.join("")
+}
+
+export function returnName(app) {
+    const keys = Object.keys(caption);
+
+    const keyEncontrada = keys.find(key => key.toLowerCase() === app.toLowerCase());
+
+    return keyEncontrada ? caption[keyEncontrada] : "Aplicativo não encontrado.";
 }

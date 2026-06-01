@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         `;
 
         columnPlansOptions.appendChild(div);
-        plansContainer.innerHTML = generatePlanHtml(ex);
+        plansContainer.innerHTML = generatePlanHtml(ex, "combo");
         
         if (ex["custom"]) {
             setupChoiceButton(ex);
@@ -315,7 +315,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                     div.onclick = () => {
                         plansContainer.style.display = "";
-                        plansContainer.innerHTML = generatePlanHtml(ex);
+                        plansContainer.innerHTML = generatePlanHtml(ex, "basic");
                     };
 
                     columnPlansOptions.appendChild(div);
@@ -342,7 +342,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                     div.onclick = () => {
                         plansContainer.style.display = "";
-                        plansContainer.innerHTML = generatePlanHtml(ex);
+                        plansContainer.innerHTML = generatePlanHtml(ex, "combo");
 
                         if (ex["custom"]) {
                             setupChoiceButton(ex);

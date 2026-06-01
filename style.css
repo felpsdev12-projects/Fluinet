@@ -316,16 +316,28 @@ header {
 		button#redirectToFlat {
 			display: flex;
 			align-items: center;
-			width: 170px;
-			height: 65px;
+			justify-content: space-around;
+			width: 160px;
+			height: 45px;
 			background: var(--orange);
-			padding: 5px;
+			padding: 3px;
 			border: none;
 			transition-duration: 0.3s;
-			border-radius: 10px;
+			border-radius: 7px;
 
 			p {
-				font-size: 20px;
+				font-size: 17px;
+			}
+
+			i {
+				width: 35px;
+				height: 35px;
+
+				svg {
+					fill: white;
+					width: 100%;
+					height: 100%;
+				}
 			}
 		}
 
@@ -335,8 +347,167 @@ header {
 	}
 }
 
+section#fluinetApps {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	background: url(assets/streaming.jpeg);
+	width: 80%;
+	height: 500px;
+	padding: 5px;
+	background-size: cover;
+	border: solid var(--gray) 2px;
+	border-radius: 10px;
+}
+
+.television {
+	width: 75%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+
+	img {
+		position: absolute;
+		left: 10px;
+		top: 0;
+	}
+
+	.flexIcon {
+		display: block;
+		justify-content: space-around;
+		text-align: center;
+		flex-direction: column;
+		align-items: center;
+		width: 70%;
+		height: 70%;
+
+		.appCaption {
+			width: 100%;
+			color: white;
+			font-weight: 450;
+			padding: 5px;
+		}
+
+		.appIconFlex {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 30px;
+			align-items: center;
+
+			.appNameFlex {
+				display: flex;
+				gap: 30px;
+				width: 60%;
+				justify-content: space-around;
+			}
+
+			i {
+				width: 60%;
+				height: 60%;
+
+				svg {
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+
+		h3.appName {
+			color: white;
+				border: solid var(--gray) 2px;
+				box-shadow: 2px 2px var(--cyan);
+				border-radius: 10px;
+				padding: 3px 10px;
+				width: 50%;
+		}
+
+		h3.streamType {
+			color: white;
+		}
+	}
+}
+.television_off {
+	background: black !important;
+}
+
+.control {
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 25px;
+	border: solid var(--gray) 2px;
+	border-radius: 10px;
+	width: 25%;
+	height: 100%;
+	align-self: center;
+	background: black;
+
+	.firstLineButtons {
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+
+		button {
+			width: 65px;
+			height: 45px;
+
+			border-radius: 10px;
+			background: transparent;
+			padding: 5px;
+
+			svg {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	.centerButtons {
+		height: 100%;
+
+		.flexApps {
+			align-self: flex-end;
+			background: rgba(0, 0, 0, 0.8);
+			border-radius: 30px;
+			padding: 5px;
+			display: grid;
+			height: 100%;
+			width: 100%;
+			grid-template-columns: repeat(3, 1fr);
+			column-gap: 30px;
+			row-gap: 20px;
+
+			i {
+				width: 55px;
+				height: 47px;
+				transition: .5s;
+				padding: 3px;
+				border: solid var(--gray) 2px;
+				border-radius: 20px;
+
+				svg {
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+}
+
+.scaledto1 {
+	scale: 1.1;
+}
+
+
 main {
-	padding-bottom: 200px;
+	padding-bottom: 20px;
 	margin-top: 70px;
 	display: flex;
 	flex-direction: column;
@@ -426,6 +597,7 @@ section#planos {
 			width: 40%;
 			order: 2;
 			height: 100%;
+			max-height: auto;
 			align-items: center;
 			display: flex;
 			flex-direction: column;
@@ -439,6 +611,7 @@ section#planos {
 			}
 
 			img {
+				height: auto;
 				width: 100%;
 				max-width: auto;
 			}
@@ -526,6 +699,9 @@ section#planos {
 					text-align: center;
 					font-weight: 400;
 					color: var(--gray);
+					border: solid var(--gray) 2px;
+					border-radius: 10px;
+					padding: 3px;
 				}
 
 				.includedApps {
@@ -633,7 +809,7 @@ section#planos {
 
 			i:hover {
 				svg {
-					fill: var(--cyan);
+					fill: var(--gray);
 				}
 			}
 		}
@@ -857,7 +1033,7 @@ section#feedback {
 			background: var(--black);
 			border-radius: 30px;
 			margin: 20px;
-			border: solid var(--orange);
+			border: solid var(--cyan);
 			gap: 100px;
 			width: 23%;
 			text-align: center;
@@ -866,10 +1042,10 @@ section#feedback {
 			.media {
 				display: flex;
 				flex-direction: column;
+				gap: 30px;
 
 				div.totalAverage {
 					display: flex;
-					gap: 2px;
 					order: 2;
 
 					s {
@@ -889,7 +1065,7 @@ section#feedback {
 
 			h3.totalMedia {
 				font-size: 50px !important;
-				color: var(--green);
+				color: white;
 				text-shadow: var(--gray) 1px 1px 1px;
 			}
 
@@ -907,7 +1083,7 @@ section#feedback {
 				path {
 					width: 100%;
 					height: 100%;
-					fill: var(--orange);
+					fill: white;
 				}
 			}
 		}
@@ -927,6 +1103,7 @@ section#feedback {
 		.feedbackContent {
 			background: var(--black);
 			border: solid var(--gray);
+			box-shadow: none;
 			border-radius: 20px;
 			width: 100%;
 			padding: 28px;
@@ -1140,8 +1317,31 @@ div.ofertas::-webkit-scrollbar {
 	}
 }
 
+.cyan_outlined {
+	border-bottom: solid var(--cyan) 2px;
+	border-radius: 0 !important;
+}
+
+.yg_outlined {
+	border-bottom: solid var(--yellowgreen) 2px;
+	border-radius: 0 !important;
+}
+
+
 .linearGradient {
 	background: linear-gradient(var(--angle), var(--orange), red, yellow);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	background-size: 200% auto;
+
+	display: inline-block;
+
+	animation: brilhoLinear 3s linear infinite;
+}
+
+.cyanGradient {
+	background: linear-gradient(to right, white, var(--cyan), white);
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
@@ -1159,12 +1359,19 @@ div.ofertas::-webkit-scrollbar {
 	border-radius: 10px;
 }
 
+.selected_orangeBorder {
+	border: solid var(--orange) 2px !important;
+	transform: scale(1.1);
+	border-radius: 10px;
+}
+
 .extra {
 	background: linear-gradient(to right, white, var(--cyan)) !important;
 	-webkit-background-clip: text !important;
 	background-clip: text !important;
 	-webkit-text-fill-color: transparent !important;
 }
+
 
 .destaque {
 	background-image:

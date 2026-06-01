@@ -213,6 +213,10 @@
 		}
 	}
 
+	section#fluinetApps {
+		display: none;
+	}
+
 	section#feedback {
 
 		.flexBox {
