@@ -217,6 +217,10 @@
 		display: none;
 	}
 
+	.fluinetAppsHr {
+		display: none;
+	}
+
 	section#feedback {
 
 		.flexBox {
