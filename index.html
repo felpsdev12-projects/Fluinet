@@ -89,26 +89,6 @@
 	</div>
 
 	<main>
-		
-
-			<div class="ofertas whiteText" data-target=".oferta">
-				<div class="arrowButtons">
-					<button id="next">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-							<path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
-						</svg>
-					</button>
-
-					<button id="back">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-							<path d="M640-80 240-480l400-400 71 71-329 329 329 329-71 71Z" />
-						</svg>
-					</button>
-				</div>
-			</div>
-
-			<hr class="lineDivisoria">
-
 			<section id="fluinetApps">
 
 				<div class="television">
@@ -143,32 +123,20 @@
 				
 			</section>
 
-			<hr class="lineDivisoria fluinetAppsHr">
+			<hr class="lineDivisoria fluinetAppsLine">
 
-			<section id="planos">
+			<section id="planos">	
 
-				<div class="plansOptionsContainer">
-					<div class="plansOptions">
-						<p class="whiteText avaliablePlans">NOSSOS PLANOS</p>
-						<div class="choicePlansContainer">
-							<button class="planTypeBtn" data="combos">Combos</button>
-							<button class="planTypeBtn" data="basics">Básicos</button>
-						</div>
-						
-						<div class="columnPlansOptions">
+				<div class="plansGrid">
+					
+					<h2 class="selectPlanContent whiteText">NOSSOS PLANOS</h2>
 
-						</div>
-
-							<!-- AQUI FICARÃO AS OPCOES DE PLANOS DISPONIVEIS, SERAO SETADOS PELO JAVASCRIPT -->
+					<div class="basicPlans">
 					</div>
 
-					
-					
-				</div>
-
-				<div class="plansContainer">
-					
-				</div>
+					<div class="comboPlans">
+					</div>
+				</div>		
 				
 			</section>
 
@@ -269,6 +237,12 @@
 		<div class="alertFlex whiteText">
 			<h3 class="alert"></h3>
 		</div>
+	</div>
+
+	<div class="announcementBox" style="display: none;">
+
+		<!-- SERÃO SETADOS VIA SCRIPT-->
+
 	</div>
 
 	<script src="script.js" type="module"></script>

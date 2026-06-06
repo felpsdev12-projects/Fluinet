@@ -1,6 +1,6 @@
 import { module, bkUrl } from "../utils/module.js";
 import { alertList } from "./alerts.js";
-import { contratarPlano, returnIcons, showAlert } from "../fun/functions.js";
+import { contratarPlano, returnIcons, showAlert, showAnnouncement } from "../fun/functions.js";
 
 const [ofertas, combos, planos] = await Promise.all([
 	module.carregarOfertas(),
@@ -18,37 +18,42 @@ const maiusculo = (e) => {
 	return result
 }
 
-const ofertasFlex = document.querySelector(".ofertas")
+const findDestaque = combos.find(element => element.destaque === true)
+const announcementBox = document.querySelector(".announcementBox")
 
-ofertas.forEach(element => {
-	if (ofertas.length <= 0) return;
+if (findDestaque) {
+	announcementBox.style.display = ""
+	announcementBox.innerHTML = showAnnouncement(findDestaque)
 
-	let isHref = element["link"] ? "Saiba Mais" : ""
-	let expiresJson = element["expiraEm"] === "Never" ? "Ilimitado" : `${element["expiraEm"][0]} As ${element["expiraEm"][1]}` 
+	const currentCep = localStorage.getItem("CEP")
+	const currentBairro = localStorage.getItem("Bairro")
 
-	const div = document.createElement("div")
-	div.className = "oferta"
-	div.innerHTML = `
-		<div class="ofertaImage">
-						<img src="${element["imagem"]}" alt="">
-					</div>
+	const main = document.querySelector("main")
+	const blockedImage = document.querySelector(".blockedImage")
+	const header = document.querySelector("header")
 
-					<div class="ofertaInfo">
-						<h3 class="ofertaTitle">${element["nome"]}</h3>
-						<p class="apps"> ${element["apps"]} </p>
+	document.querySelector(".closeAnnouncement").onclick = () => {
+	announcementBox.style.display = "none"
 
-						<p class="ofertaCaption">${minusculo(element["legenda"])}</p>
-						<div class="flexLastLine">
-						<div class="expiresBox">
-						<p class="expiresText">Válido até</p>
-						<h2 class="expiresIn">${expiresJson}</h2>
-						</div>
+	main.style.filter = "none"
+	blockedImage.style.filter = "none"
+	header.style.filter = "none"
+	}
 
-						<a href="${element["link"]}" class="redirectLink">${isHref}</a>
-					</div>
-		`
-	ofertasFlex.appendChild(div)
-})
+	document.querySelector(".consultarBtn").onclick = () => {
+		announcementBox.style.display = "none"
+
+		main.style.filter = "none"
+		blockedImage.style.filter = "none"
+		header.style.filter = "none"
+	}
+
+	document.querySelector(".whatsappButton").onclick = () => {
+		const link = `https://wa.me/11963348201?text=Olá, Gostaria de saber mais sobre o Combo de ${findDestaque["megaBytes"]} Mega %0A Cep: ${currentCep} %0A Bairro: ${currentBairro}`
+
+		window.open(link, "_blank")
+	}
+}
 
 const res = await fetch(`${bkUrl}/returnConfigJson`, {
 	method: "POST",

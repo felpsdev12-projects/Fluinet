@@ -90,56 +90,36 @@
 	section#planos {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
+		text-align: center;
 		gap: 20px;
-		width: 100%;
 
-		.plansOptionsContainer {
-			.columnPlansOptions {
-				.planOption {
-					width: 250px;
-				}
-			}
-		}
+		.plansGrid {
+			place-items: center;
+			display: flex;
+			flex-direction: column;
+			gap: 70px;
 
-		.taxa {
-			font-size: 15px;
-		}
-
-		.appsChoiceText {
-			font-size: 17px;
-		}
-
-		.plansContainer {
-			width: 90%;
-			height: auto;
-			justify-content: center;
-
-			div.contratarBox {
-
-				padding: 0;
-
-				button.contratarPlanoBtn {
-					width: 160px;
-				}
+			.basicPlans,
+			.comboPlans {
+				grid-template-columns: repeat(1, 1fr);
 			}
 
-			.flexPlanInfo {
-				margin: 0;
-				width: 100%;
-
-				.appsBox {
-					.appsContainer {
-
-						i {
-							width: 40px;
-							height: 40px;
-						}
-					}
-				}
-			}
-
-			.imageContainer {
-				display: none;
+			.plansContainer {
+				position: relative;
+				transition: .5;
+				display: flex;
+				flex-direction: column;
+				border: solid white 1px;
+				padding: 10px;
+				border-radius: 30px;
+				min-width: 300px;
+				max-width: auto;
+				margin: 0 auto;
+				height: auto;
+				background: rgb(12, 12, 12);
+				color: white;
+				cursor: pointer;
 			}
 		}
 	}
@@ -168,10 +148,51 @@
 		}
 	}
 
+	.fluinetAppsLine {
+		display: none;
+	}
+
 	section {
 		.sectionTitle {
 			font-size: 35px;
 			text-align: center;
+		}
+	}
+
+	.announcementBox {
+
+		.announcement {
+			display: flex;
+			flex-direction: column;
+			height: auto;
+			max-width: 80dvw;
+			max-height: 80dvh;
+
+			article {
+
+				.announcementTitle {
+
+					.megaByteSpeed {
+					font-size: 28px;
+				}
+				}
+			}
+
+			.announcementImage {
+				order: 1;
+				width: 60%;
+				display: flex;
+				padding: 5px;
+				
+				img {
+					border-radius: 0;
+				}
+			}
+
+			.captionAnnouncement {
+				order: 2;
+
+			}
 		}
 	}
 
@@ -214,10 +235,6 @@
 	}
 
 	section#fluinetApps {
-		display: none;
-	}
-
-	.fluinetAppsHr {
 		display: none;
 	}
 
@@ -265,45 +282,6 @@
 						flex-direction: column;
 					}
 				}
-			}
-		}
-	}
-
-	div.ofertas {
-		width: 90%;
-		height: 300px;
-		justify-content: center;
-
-		.arrowButtons {
-			width: 95%;
-
-			button {
-				width: 35px;
-				height: 45px;
-				border: none;
-				background: transparent;
-				display: none;
-
-				svg {
-					fill: white;
-				}
-			}
-
-			button:hover {
-				background: transparent;
-
-				svg {
-					fill: black;
-				}
-			}
-		}
-
-
-		div.oferta {
-			width: 100%;
-
-			div.ofertaImage {
-				display: none;
 			}
 		}
 	}

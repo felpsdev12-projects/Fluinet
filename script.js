@@ -2,6 +2,7 @@ import {
     contratarPlano,
     generatePlanHtml,
     returnIcons,
+    returnSvgIcon,
     searchCep,
     showAlert,
     verifyCepRegister
@@ -159,200 +160,174 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.querySelector(".alertBox").style.display = "none";
     };
 
-    const columnPlansOptions = document.querySelector(".columnPlansOptions");
-    const plansContainer = document.querySelector(".plansContainer");
-    const planTypeBtns = document.querySelectorAll(".planTypeBtn");
-    const getAllPlansBank = await module.jsonCopy();
-    const taxaTxt = document.querySelector(".taxa");
+    const plansGrid = document.querySelector(".plansGrid")
+    const basicPlans = plansGrid.querySelector(".basicPlans")
+    const comboPlans = plansGrid.querySelector(".comboPlans")
+    let isConfirmed = false
 
-    function pushHtml(ex) {
-        const contratarBox = plansContainer.querySelector(".contratarBox");
-        const flexPlanInfo = plansContainer.querySelector(".flexPlanInfo");
+    let basicItems = basicPlans.children.length
+    let comboItems = comboPlans.children.length
 
-        let appsTable = [];
-        let isConfirmed = false;
+    function pushHtml(div, ex) {
 
-        let appsBox = flexPlanInfo.querySelector(".appsBox");
-        if (!appsBox) {
-            appsBox = document.createElement("div");
-            appsBox.className = "appsBox";
-            flexPlanInfo.appendChild(appsBox);
-        }
+        isConfirmed = false
+        let appsTable = []
 
-        if (contratarBox) contratarBox.style.display = "none";
-        if (taxaTxt) taxaTxt.style.display = "none";
+        const plansContainer = div.parentElement
+        const mainPlanInfo = div
+        const subMainPlanInfo = plansContainer.querySelector(".subMainPlanInfo")
 
-        appsBox.style.display = "";
-        appsBox.innerHTML = `
-            <small class="appsChoiceText">Escolha ${ex["escolhas"]} Apps </small>
-            <div class="appsContainer">${returnIcons(ex["apps"])}</div>
-            <button class="confirmAppsBtn" style="display:none">Confirmar</button>
-        `;
+        const consultarBtn = mainPlanInfo.querySelector(".consultarPlano")
+        const btnWhatsapp = mainPlanInfo.querySelector(".whatsappBtn")
+        consultarBtn.textContent = "Recolher"
 
-        const appsIcons = appsBox.querySelectorAll(".appsContainer i");
-        const confirmBtn = appsBox.querySelector(".confirmAppsBtn");
-        const contratarBtn = plansContainer.querySelector(".contratarPlanoBtn");
+        const defaultSubHtml = subMainPlanInfo.innerHTML
 
-        appsIcons.forEach((icon) => {
-            icon.onclick = () => {
-                const getNameAttr = icon.getAttribute("name");
-                const getSelectedIcons = appsBox.querySelectorAll(".orangeBorder").length;
+        subMainPlanInfo.innerHTML = `
+                <div class="appsContainer">
+                    ${returnIcons(ex["apps"])}
+                </div>
 
-                if (!icon.classList.contains("orangeBorder")) {
-                    if (getSelectedIcons == ex["escolhas"]) return;
-                    icon.classList.add("orangeBorder");
-                    appsTable.push(getNameAttr);
+                <button class="confirmBtn" style="display:none">Confirmar</button>
+            `
+
+        const appIcon = subMainPlanInfo.querySelectorAll("i")
+        const includedApps = mainPlanInfo.querySelector(".includedApps")
+
+        appIcon.forEach((e) => {
+            e.onclick = () => {
+
+                const selectedSelector = subMainPlanInfo.querySelectorAll(".orangeBorder")
+
+                const getName = e.getAttribute("name")
+
+                if (!e.classList.contains("orangeBorder")) {
+                    if (selectedSelector.length == ex["escolhas"]) return;
+                    e.classList.add("orangeBorder")
+                    appsTable.push(getName)
                 } else {
-                    icon.classList.remove("orangeBorder");
-                    const locateIndex = appsTable.indexOf(getNameAttr);
-                    appsTable.splice(locateIndex, 1);
+                    const getIndex = appsTable.indexOf(getName)
+
+                    if (getIndex <= -1) return;
+                    e.classList.remove("orangeBorder")
+                    appsTable.splice(getIndex, 1)
                 }
 
-                appsTable.length == ex["escolhas"] ? confirmBtn.style.display = "" : confirmBtn.style.display = "none";
+                const confirmBtn = subMainPlanInfo.querySelector(".confirmBtn")
+
+                if (appsTable.length == ex["escolhas"]) {
+                    confirmBtn.style.display = ""
+                } else {
+                    confirmBtn.style.display = "none"
+                }
 
                 confirmBtn.onclick = () => {
-                    if (contratarBox) contratarBox.style.display = "";
-                    if (taxaTxt) taxaTxt.style.display = "";
-                    appsBox.style.display = "none";
-
-                    const flexIncludedApps = document.querySelector(".flexIncludedApps");
-                    if (flexIncludedApps) {
-                        flexIncludedApps.innerHTML = `${returnIcons(appsTable)}`;
-                    }
-
-                    isConfirmed = true;
-                };
-
-                if (contratarBtn) {
-                    contratarBtn.onclick = () => {
-                        if (!isConfirmed) return;
-                        contratarPlano(ex, alertList.cepUnavailable, appsTable);
-                    };
+                   if (appsTable.length !== ex["escolhas"]) return;
+                    includedApps.innerHTML = returnIcons(appsTable)
+                    subMainPlanInfo.innerHTML = defaultSubHtml
+                    isConfirmed = true
                 }
-            };
-        });
-    }
 
-    function setupChoiceButton(ex) {
-        const contratarBox = plansContainer.querySelector(".contratarBox");
-        if (!contratarBox) return;
-
-        let choiceAppsBtn = contratarBox.querySelector(".choiceAppsBtn");
-        if (!choiceAppsBtn) {
-            choiceAppsBtn = document.createElement("i");
-            choiceAppsBtn.className = "choiceAppsBtn";
-            choiceAppsBtn.innerHTML = `
-                <i title="Adicionar Apps" class="choiceAppsBtn">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                        <path d="M720-160v-120H600v-80h120v-120h80v120h120v80H800v120h-80Zm-600 40q-33 0-56.5-23.5T40-200v-560q0-33 23.5-56.5T120-840h560q33 0 56.5 23.5T760-760v200h-80v-80H120v440h520v80H120Zm0-600h560v-40H120v440h520v80H120Zm0 0v-40 40Z"/>
-                    </svg>
-                </i>
-            `;
-            contratarBox.appendChild(choiceAppsBtn);
+                btnWhatsapp.onclick = () => {
+                    if (!isConfirmed) return;
+                        contratarPlano(ex, alertList.cepUnavailable, appsTable)
         }
-
-        choiceAppsBtn.onclick = () => {
-            pushHtml(ex);
-        };
+            }
+        })
     }
 
-    getAllPlansBank["combos"].forEach((ex) => {
-        let recomendedHtml = ex["destaque"] ? "Recomendado" : "Combo";
+    const getAllPlansBank = await module.jsonCopy()
 
-        plansContainer.classList.remove("destaque_azul");
+    getAllPlansBank["basicos"].forEach((ex) => {
+
+        const div = document.createElement("div")
+        div.className = "plansContainer"
+        div.innerHTML = generatePlanHtml(ex, "basic")
 
         if (ex["destaque"]) {
-            plansContainer.classList.add("destaque");
-            plansContainer.innerHTML = generatePlanHtml(ex);
+            div.style.order = "1"
         } else {
-            plansContainer.classList.remove("destaque");
+            basicItems++
+            div.style.order = basicItems + 1
         }
 
-        const div = document.createElement("div");
-        div.className = "basicPlanOption planOption";
-        div.innerHTML = `
-            <h3 class="planName">${ex["nome"]}</h3>
-            <h3 class="planTech">${ex["tecnologia"]}</h3>
-            <h3 class="recomended">${recomendedHtml}</h3>
-        `;
+        basicPlans.appendChild(div)
 
-        columnPlansOptions.appendChild(div);
-        plansContainer.innerHTML = generatePlanHtml(ex, "combo");
-        
-        if (ex["custom"]) {
-            setupChoiceButton(ex);
-            pushHtml(ex);
-        }
-    });
+        const btnConsultar = div.querySelector(".consultarPlano")
+        const btnWhatsapp = div.querySelector(".whatsappBtn")
+        const subMainPlanInfo = div.querySelector(".subMainPlanInfo")
 
-    planTypeBtns.forEach((e) => {
-        e.onclick = () => {
-            plansContainer.innerHTML = "";
-            plansContainer.style.display = "none";
-            columnPlansOptions.innerHTML = "";
+        btnConsultar.onclick = (e) => {
 
-            const getThisData = e.getAttribute("data");
-
-            if (getThisData === "basics") {
-                getAllPlansBank["basicos"].forEach((ex) => {
-                    let recomendedHtml = ex["destaque"] ? "Recomendado" : "Básico";
-
-                    plansContainer.classList.remove("destaque_azul");
-
-                    if (ex["destaque"]) {
-                        plansContainer.classList.add("destaque");
-                    } else {
-                        plansContainer.classList.remove("destaque");
-                    }
-
-                    const div = document.createElement("div");
-                    div.className = "basicPlanOption planOption";
-                    div.innerHTML = `
-                        <h3 class="planName">${ex["nome"]}</h3>
-                        <h3 class="planTech">${ex["tecnologia"]}</h3>
-                        <h3 class="recomended">${recomendedHtml}</h3>
-                    `;
-
-                    div.onclick = () => {
-                        plansContainer.style.display = "";
-                        plansContainer.innerHTML = generatePlanHtml(ex, "basic");
-                    };
-
-                    columnPlansOptions.appendChild(div);
-                });
+            if (!subMainPlanInfo.classList.contains("subMainPlanInfo-actived")) {
+                subMainPlanInfo.classList.add("subMainPlanInfo-actived")
+                btnConsultar.textContent = "Recolher"
             } else {
-                getAllPlansBank["combos"].forEach((ex) => {
-                    plansContainer.classList.remove("destaque");
-
-                    if (ex["destaque"]) {
-                        plansContainer.classList.add("destaque_azul");
-                    } else {
-                        plansContainer.classList.remove("destaque_azul");
-                    }
-
-                    let recomendedHtml = ex["destaque"] ? "Recomendado" : "Combo";
-
-                    const div = document.createElement("div");
-                    div.className = "comboPlanOption planOption";
-                    div.innerHTML = `
-                        <h3 class="planName">${ex["nome"]}</h3>
-                        <h3 class="planTech">${ex["tecnologia"]}</h3>
-                        <h3 class="recomended">${recomendedHtml}</h3>
-                    `;
-
-                    div.onclick = () => {
-                        plansContainer.style.display = "";
-                        plansContainer.innerHTML = generatePlanHtml(ex, "combo");
-
-                        if (ex["custom"]) {
-                            setupChoiceButton(ex);
-                            pushHtml(ex);
-                        }
-                    };
-
-                    columnPlansOptions.appendChild(div);
-                });
+                subMainPlanInfo.classList.remove("subMainPlanInfo-actived")
+                btnConsultar.textContent = "Consultar"
             }
+        }
+
+        btnWhatsapp.onclick = () => {
+            contratarPlano(ex, alertList.cepUnavailable, [])
+        }
+    })
+
+    getAllPlansBank["combos"].forEach((ex) => {
+        const div = document.createElement("div")
+        div.className = "plansContainer"
+        div.innerHTML = generatePlanHtml(ex, "combo")
+
+        if (ex["destaque"]) {
+            div.style.order = "1"
+        } else {
+            comboItems++
+            div.style.order = comboItems + 1
+        }
+
+        comboPlans.appendChild(div)
+
+        const btnConsultar = div.querySelector(".consultarPlano")
+
+        const addAppBtn = div.querySelector(".addApps")
+        const subMainPlanInfo = div.querySelector(".subMainPlanInfo")
+        const mainPlanInfo = div.querySelector(".mainPlanInfo")
+        const includedApps = mainPlanInfo.querySelector(".includedApps")
+        const icon = mainPlanInfo.querySelector(".includedApps i")
+
+        if (ex["custom"]) {
+            pushHtml(mainPlanInfo, ex)
+            subMainPlanInfo.classList.add("subMainPlanInfo-actived")
+
+                includedApps.onclick = () => {
+                    if (!isConfirmed) return;
+                    pushHtml(mainPlanInfo, ex)
+                }
+
+        }
+
+        btnConsultar.onclick = (e) => {
+
+            if (!subMainPlanInfo.classList.contains("subMainPlanInfo-actived")) {
+                subMainPlanInfo.classList.add("subMainPlanInfo-actived")
+                btnConsultar.textContent = "Recolher"
+            } else {
+                subMainPlanInfo.classList.remove("subMainPlanInfo-actived")
+                btnConsultar.textContent = "Consultar"
+            }
+        }
+    })
+    
+    const whatsappButtons = document.querySelectorAll(".whatsappBtn")
+    
+    whatsappButtons.forEach((e) => {
+        e.onmouseenter = () => {
+            e.innerHTML = returnSvgIcon("whatsapp")
+        };
+
+        e.onmouseleave = () => {
+            e.innerHTML = "Whatsapp"
         };
     });
+
 });

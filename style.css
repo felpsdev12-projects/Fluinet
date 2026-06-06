@@ -1,6 +1,6 @@
 * {
 	font-family: "Oswald";
-	font-weight: 700;
+	font-weight: 400;
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
@@ -26,6 +26,7 @@ button {
 	--yellowgreen: rgb(208, 255, 0);
 	--blue: #06468a;
 	--cyan: rgba(0, 255, 255, 1);
+	--fblue: #004887;
 }
 
 .line {
@@ -35,7 +36,7 @@ button {
 
 body,
 html {
-	background: var(--black);
+	background: black;
 	scroll-behavior: smooth;
 	overflow-x: hidden;
 	z-index: 100;
@@ -368,6 +369,7 @@ section#fluinetApps {
 	flex-direction: column;
 	justify-content: start;
 	align-items: center;
+	position: relative;
 
 	img {
 		position: absolute;
@@ -420,11 +422,11 @@ section#fluinetApps {
 
 		h3.appName {
 			color: white;
-				border: solid var(--gray) 2px;
-				box-shadow: 2px 2px var(--cyan);
-				border-radius: 10px;
-				padding: 3px 10px;
-				width: 50%;
+			border: solid var(--gray) 2px;
+			box-shadow: 2px 2px var(--cyan);
+			border-radius: 10px;
+			padding: 3px 10px;
+			width: 50%;
 		}
 
 		h3.streamType {
@@ -432,6 +434,7 @@ section#fluinetApps {
 		}
 	}
 }
+
 .television_off {
 	background: black !important;
 }
@@ -489,7 +492,6 @@ section#fluinetApps {
 				height: 47px;
 				transition: .5s;
 				padding: 3px;
-				border: solid var(--gray) 2px;
 				border-radius: 20px;
 
 				svg {
@@ -516,441 +518,433 @@ main {
 	gap: 100px;
 }
 
+svg {
+	width: 100%;
+	height: 100%;
+}
+
 section#planos {
 	width: 90%;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: center;
 
-	.plansOptionsContainer {
+
+	.plansGrid {
+		width: 80%;
+		place-items: center;
 		display: flex;
-		justify-content: flex-start;
-		align-items: flex-start;
-		width: 20%;
-		padding: 10px;
+		flex-direction: column;
+		gap: 70px;
 
-		.plansOptions {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			gap: 40px;
-
-			p.avaliablePlans {
-				text-align: center;
-				border-bottom: solid var(--cyan) 2px;
-			}
-
-			.choicePlansContainer {
-				display: flex;
-				gap: 20px;
-
-				button {
-					width: 100px;
-					padding: 3px;
-					border: solid white 2px;
-					background: none;
-					color: white;
-					border-radius: 10px;
-				}
-
-				button:hover {
-					border: solid var(--cyan) 2px;
-				}
-			}
+		.basicPlans, .comboPlans {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			justify-content: center;
+			align-items: flex-start;
+			gap: 30px;
 		}
 
-		.columnPlansOptions {
+		.plansContainer {
+			position: relative;
+			transition: .5;
 			display: flex;
 			flex-direction: column;
-			gap: 20px;
-
-			.planOption {
-				display: flex;
-				justify-content: space-around;
-				font-size: 16px;
-				color: white;
-				gap: 10px;
-				border: solid var(--gray) 2px;
-				border-radius: 10px;
-				padding: 5px;
-				cursor: pointer;
-			}
-
-			.planOption:hover {
-				border: solid rgba(0, 255, 255, .9) 2px;
-			}
-		}
-	}
-
-	.plansContainer {
-		display: flex;
-		align-items: end;
-		text-align: center;
-		border: solid transparent;
-		border-radius: 20px;
-		padding: 6px;
-		width: 60%;
-		margin: 0 auto;
-		min-height: 375px;
-		max-height: auto;
-
-		.imageContainer {
-			width: 40%;
-			order: 2;
-			height: 100%;
-			max-height: auto;
-			align-items: center;
-			display: flex;
-			flex-direction: column;
-			color: white;
-			justify-content: space-around;
-
-			h3 {
-				padding: 3px;
-				width: 80%;
-				border-bottom: solid var(--gray) 2px;
-			}
-
-			img {
-				height: auto;
-				width: 100%;
-				max-width: auto;
-			}
-		}
-
-		.flexPlanInfo {
-			display: flex;
-			flex-direction: column;
-			gap: 20px;
-			color: white;
-			margin: 0 auto;
+			border: solid white 1px;
 			padding: 10px;
-			width: 60%;
+			border-radius: 30px;
+			min-width: 300px;
+			max-width: auto;
+			margin: 0 auto;
+			height: auto;
+			background: rgb(12, 12, 12);
+			color: white;
+			cursor: pointer;
 
-			.flexFirstLineBoxes {
-				display: flex;
-				gap: 40px;
-				align-items: center;
+			.tag {
+				position: absolute;
+				top: -10px;
+				left: 20px;
+				background: orangered;
+				border: none;
+				border-radius: 15px;
+				border-bottom-left-radius: 0;
+				padding: 0 10px;
+				width: 200px;
+				margin: 0 auto;
 			}
 
-			.firstLineBox {
-				border: solid var(--gray) 2px;
-				border-radius: 10px;
-				padding: 3px 15px;
+			div.mainPlanInfo {
+				padding: 11px;
 				width: 100%;
-				display: flex;
-				justify-content: center;
-			}
-
-			.secondLineBox {
-				width: 35%;
 				display: flex;
 				flex-direction: column;
-				border-radius: 10px;
-				padding: 10px;
-				gap: 5px;
+				align-items: flex-start;
+				gap: 10px;
 
-				.mbpsTitle {
-					color: var(--gray);
-					font-weight: 400;
+				span.planTitle {
+					font-size: 14px;
 				}
 
-				.uploadSecondLine,
-				.downloadSecondLine {
+				div.planSubtitle {
 					display: flex;
-					align-items: center;
-					gap: 6px;
+					gap: 10px;
+					width: 100%;
+					padding: 10px;
 
 					i {
-						width: 35px;
-						height: 35px;
-
-						svg {
-							fill: white;
-							width: 100%;
-							height: 100%;
-						}
+						width: 45px;
+						height: 45px;
 					}
-				}
-			}
 
-			.secondColumnLineBox {
-				display: flex;
-				flex-direction: column;
-				gap: 20px;
-				width: 50%;
+					div.includedApps {
+						padding: 5px;
+						display: grid;
+						place-items: center;
+						gap: 5px;
+						flex-grow: 1;
+						grid-template-columns: repeat(3, 1fr);
 
-				h4 {
-					border: solid var(--gray) 2px;
-					box-shadow: 2px 2px var(--cyan);
-					border-radius: 10px;
-					padding: 3px 10px;
-					width: 100%;
-				}
-			}
+						h2 {
+							grid-column: span 3;
+							display: flex;
+							gap: 5px;
 
-			.captionBox {
-				border-radius: 10px;
-				padding: 3px;
-				display: flex;
-				flex-direction: column;
-				gap: 10px;
-
-				.caption {
-					text-align: center;
-					font-weight: 400;
-					color: var(--gray);
-					border: solid var(--gray) 2px;
-					border-radius: 10px;
-					padding: 3px;
-				}
-
-				.includedApps {
-					display: flex;
-					gap: 7px;
-
-					.flexIncludedApps {
-						display: flex;
-						gap: 7px;
-
-						i {
-							width: 30px;
-							height: 30px;
-
-							svg {
-								width: 100%;
-								height: 100%;
+							small {
+								font-size: 17px;
 							}
 						}
+
+						span {
+							grid-column: span 3;
+						}
+
+						.addApps {
+							width: 45px;
+							height: 45px;
+							border: none;
+							padding: 7px;
+							background: none;
+							border-radius: 50%;
+							grid-column: span 3;
+							outline: none;
+						}
+
+						i {
+							grid-column: span 3;
+							width: 30px;
+							height: 30px;
+						}
+					}
+				}
+
+				div.connectionBox {
+					width: 100%;
+					display: flex;
+					flex-direction: column;
+					gap: 10px;
+					padding: 5px;
+
+						i.checkIcon {
+							width: 25px;
+							height: 25px;
+						}
+
+						article {
+							display: flex;
+							gap: 10px;
+						}
+
+				}
+
+				.plansButtons {
+					width: 100%;
+					display: flex;
+					justify-content: space-around;
+					align-self: flex-start;
+
+					button {
+						background: transparent;
+						border: solid var(--gray) 1.5px;
+						border-radius: 20px;
+						padding: 3px;
+						font-size: 16px;
+						width: 90px;
+						color: white;
+					}
+
+					
+
+					button.consultarPlano {
+						box-shadow: 0 2px var(--cyan);
+						width: 120px;
+					}
+
+					button.whatsappBtn {
+						display: flex;
+						justify-content: center;
+						border: none;
+						border-bottom: solid var(--green) 2px;
+						padding: 0;
+						border-radius: 0;
+						font-weight: 300;
+
+						i {
+							width: 40px;
+							height: 30px;
+						}
+					}
+
+					button.whatsappBtn:hover {
+						scale: 1.3;
+						border: none;
 					}
 				}
 			}
 
-			.appsBox {
+			.subMainPlanInfo {
 				display: flex;
 				flex-direction: column;
-				gap: 10px;
-				justify-content: center;
 				align-items: center;
-
-				.confirmAppsBtn {
-					border: solid white 2px;
-					border-radius: 10px;
-					background: green;
-					color: white;
-					padding: 3px;
-					width: 220px;
-					font-size: 16px;
-				}
+				gap: 20px;
+				width: 100%;
+				visibility: collapse;
+				height: 0;
 
 				.appsContainer {
 					display: flex;
+					flex-grow: 1;
 					gap: 10px;
-
+					width: 100%;
+					
 					i {
 						width: 35px;
 						height: 35px;
+					}
+				}
 
-						svg {
-							width: 100%;
-							height: 100%;
+				.confirmBtn {
+					border: none;
+					background: green;
+					color: white;
+					width: 200px;
+					font-size: 16px;
+					padding: 3px 5px;
+					border-radius: 20px;
+				}
+
+				.connectionSpeed {
+					width: 100%;
+					display: flex;
+					justify-content: space-around;
+					flex-grow: 1;
+					gap: 10px;
+
+					article {
+						display: flex;
+						flex-direction: column;
+						gap: 5px;
+						
+						small.speedContent {
+							font-size: 16px;
+							border-bottom: solid var(--cyan) 2px ;
+						}
+					}
+
+					.speedContainer {
+						display: flex;
+						align-items: center;
+						gap: 5px;
+
+						span {
+							font-size: 20px;
+							font-weight: 700;
+							display: flex;
+							flex-direction: column;
+
+							small {
+								font-size: 15px;
+							}
+
+						}
+						
+						i {
+							width: 35px;
+							height: 35px;
 						}
 					}
 				}
+
+				.priceContainer {
+					display: flex;
+					flex-direction: column;
+					gap: 4px;
+					align-items: center;
+				}
 			}
 
+			.plansContainer::before {
+				width: 7px;
+				content: "";
+				background: white;
+				border-top-left-radius: 25px;
+				border-bottom-left-radius: 20px;
+			}
 		}
 
-		div.contratarBox {
-			display: flex;
-			justify-content: space-between;
-			width: 100%;
-			align-items: center;
-			padding: 10px;
-
-			.price {
-				color: var(--gray);
-				display: flex;
-				flex-direction: column;
-
-				span {
-					color: white;
-					font-size: 18px;
-				}
+		.plansContainer:hover {
+				background: black;
 			}
-
-			button.contratarPlanoBtn {
-				border: solid var(--gray) 2px;
-				box-shadow: 0 2px var(--cyan);
-				border-radius: 10px;
-				padding: 4px;
-				font-size: 16px;
-				color: white;
-				background: transparent;
-				width: 180px;
-			}
-
-			button.contratarPlanoBtn:hover {
-				scale: 1.1;
-				box-shadow: 2px 2px var(--cyan);
-			}
-
-			i {
-				width: 35px;
-				height: 35px;
-				border-radius: 10px;
-				cursor: pointer;
-
-				svg {
-					fill: white;
-					width: 100%;
-					height: 100%;
-				}
-			}
-
-			i:hover {
-				svg {
-					fill: var(--gray);
-				}
-			}
-		}
 	}
 }
 
+.smallLine {
+	height: 100%;
+	border: solid var(--gray) .5px;
+}
 
-div.ofertas {
+.longLine {
+	width: 100%;
+	border: solid var(--gray) 1px;
+}
+
+.subMainPlanInfo-actived {
+	padding: 20px;
+	height: auto !important;
+	visibility: visible !important;
+}
+
+.input_erro {
+	color: red !important;
+}
+
+.announcementBox {
+	position: fixed;
 	display: flex;
-	width: 60%;
-	overflow-x: auto;
-	scroll-snap-type: x mandatory;
-	flex-wrap: nowrap;
-	box-shadow: 0 0 30px transparent;
-	border-radius: 20px;
-	height: 350px;
-	box-shadow: 0 0 30px var(--cyan);
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10;
 
-
-	.arrowButtons {
-
+	.announcement {
+		border: solid var(--black);
+		border-radius: 5px;
 		display: flex;
-		align-self: center;
-		justify-content: space-between;
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 70%;
+		justify-content: flex-end;
+		max-width: 800px;
+		max-height: 60%;
+		background: white;
+		position: relative;
 
-
-		button {
-			position: relative;
-			width: 35px;
-			outline: none;
-			height: 70px;
-			padding: 0;
-			border: none;
-			transition-duration: 0.2s;
-			background: transparent;
-
-			svg {
-				width: 100%;
-				height: 100%;
-				fill: white;
-			}
+		button.closeAnnouncement {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 30px;
+			height: 30px;
+			margin: 10px;
 		}
 
-		#back {
-			order: 1;
-		}
-
-		#next {
+		.announcementImage {
+			width: 35%;
 			order: 2;
-		}
-
-		button:hover {
-			background: var(--black);
-
-			svg {
-				fill: white;
-			}
-		}
-	}
-
-	.oferta {
-		padding: 10px;
-		display: flex;
-		gap: 60px;
-		background: black;
-
-		.ofertaImage {
-			width: 50%;
 
 			img {
 				width: 100%;
 				height: 100%;
-				border-radius: 10px;
+				border-top-left-radius: 10px;
+				border-bottom-left-radius: 10px; 
 			}
 		}
 
-		.ofertaInfo {
+		article {
+			padding: 10px;
+			margin: 0 auto;
 			display: flex;
-			flex-direction: column;
+			height: calc(100% - auto);
 			justify-content: space-around;
 			align-items: center;
-			text-align: center;
+			flex-direction: column;
+			gap: 20px;
 
-			p.apps {
-				position: relative;
-				box-shadow: 0 3px var(--cyan);
-				padding: 5px;
-				width: 250px;
-				height: auto;
-				text-align: center;
+			.announcementTitle {
+
+				display: flex;
+				flex-direction: column;
+				gap: 3px;
+
+				h1 {
+						color: var(--blue);
+
+						.megaByteSpeed {
+							font-size: 354px;
+						}
+
+						span {
+							background: blue;
+							box-shadow: 0 0 0 1px var(--gray);
+							color: white;
+							padding: 0 3px;
+						}
+					}
+
+				.megaByteSpeed {
+					font-size: 32px;
+					margin-left: 20px;
+					color: blue;
+					text-shadow: 2px 1px black;
+				}	
 			}
 
-			.ofertaTitle {
-				box-shadow: 0 0 10px var(--cyan);
-				padding: 3px;
-				border-radius: 10px;
-				width: 320px;
-				text-align: center;
+			.checkCaptions {
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
+				align-self: flex-start;
+
+				span {
+					border-bottom: solid blue 2px;
+					font-size: 17px;
+				}
 			}
 
-			.ofertaCaption {
-				border: solid var(--gray) 2px;
-				border-radius: 10px;
-				background: var(--black);
-				padding: 15px;
-				font-weight: 450;
-			}
-
-			.flexLastLine {
+			div.buttonsAnnouncement {
 				width: 100%;
-				font-size: 13px;
 				display: flex;
 				justify-content: space-around;
-				align-items: center;
 
-				.expiresBox {
-					.expiresIn {
-						font-size: 17px;
-					}
+				button {
+					border: none;
+					padding: 3px;
+					width: 130px;
+					font-size: 18px;
 				}
 
-				a {
-					font-size: 16px;
-					text-decoration: underline var(--cyan) 2px;
+				.consultarBtn {
+					border-bottom: solid blue 2px;
+					background: transparent;
+				}
+
+				.consultarBtn:hover {
+					scale: 1.1;
+					color: blue;
+				}
+
+				.whatsappButton {
+					background: green;
+					border-radius: 5px;
 					color: white;
 				}
 
-				a:hover {
+				.whatsappButton:hover {
+					background: var(--green);
 					scale: 1.1;
 				}
 			}
 		}
 	}
-}
-
-.input_erro {
-	color: red !important;
 }
 
 section#numeros {

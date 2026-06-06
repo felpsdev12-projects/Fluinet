@@ -1,3 +1,4 @@
+import { icons } from "../assets/icons/icons.js";
 import { updateInfo, showCepBox } from "../script.js";
 import {
 	debounce,
@@ -33,82 +34,85 @@ export function getAppContext(appName, data) {
 	)
 }
 
+export function returnSvgIcon(iconName) {
+	return icons[iconName] || ""
+}
+
 export function generatePlanHtml(ex, type) {
 
-	let recomendedHtml = ex["destaque"] ? "Recomendado" : "Básico"
-	let thisTextColor = ex["destaque"] ? "cyanGradient" : ""
-	let display = type == "combo" ? "" : "none"
+	let isTagged = ex["destaque"] ? "" : "none"
+	let included = type == "basic" ? "none" : ""
+	let includedApps = ex["custom"] ? `<h2>${ex["escolhas"]} <small>Apps</small> </h2>` : returnIcons(ex["apps"]) || ""
 
-	return (
-	`<div class="imageContainer">
-							<h3 class="type ${thisTextColor}">${recomendedHtml}</h3>
-							<img src="${ex["imagem"]}">
-						</div>
+	return (`
+		<span class="tag" style="display:${isTagged}">Recomendado</span>
+		
+		<div class="mainPlanInfo">
+			<span class="planTitle">${ex["nome"].replace("MB", "MegaBytes")}</span>
 
-						<div class="flexPlanInfo">
-							<div class="firstLineBox">
-								<h3 class="planInfoName">${ex["nome"].replace("MB", "MegaBytes")} De Internet</h3>
-							</div>
-				<div class="flexFirstLineBoxes">
-						<div class="secondLineBox">
-								<div class="downloadBox">
-									<h3 class="downloadTitle mbpsTitle">Download: </h3>
+			<div class="planSubtitle">
 
-									<div class="downloadSecondLine">
+				${returnSvgIcon("wifi")}
 
-										<i>
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-											<path d="M440-320v-326L336-542l-56-58 200-200 200 200-56 58-104-104v326h-80ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
-											</svg>
-										</i>
+				<h2 class="subTitle">${ex["megaBytes"]} <br> MEGA </h2>
 
-										<h4 class="download">${ex["megaBytes"]} Mbps</h4>
-									</div>
-								</div>
+				<div class="includedApps">
+				<span style="display:${included}">Inclui</span>
+					${includedApps}
+				</div>
+			</div>
 
-								<div class="uploadBox">
-									<h3 class="uploadTitle mbpsTitle">Upload: </h3>
+			<div class="connectionBox">
+				<article class="tecnologia">
+					${returnSvgIcon("check")}
 
-									<div class="uploadSecondLine">
-										<i>
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-											<path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
-											</svg>
-										</i>
+					<small class="connection">Wifi Conexão ${ex["tecnologia"]} </small>
+				</article>
 
-										<h4 class="upload">${ex["megaBytes"] / 2} Mbps</h4>
-									</div>
-								</div>	
-							</div>
+				<article class="fibraOptica">
+					${returnSvgIcon("check")}
 
-							<div class="secondColumnLineBox">
-								<h4 class="tecnologia">Conexão <span>${ex["tecnologia"]}</span></h4>
-								<h4 class="fibra">100% Fibra Óptica</h4>
-								<h4 class="velocidade">${returnSpeedHtml(ex["megaBytes"])}</h4>
-							</div>
-						</div>
+					<small class="fibra">100% Fibra Óptica </small>
+				</article>
+			</div>	
 
-						<div class="captionBox">
-							<p class="caption">${ex["legenda"]}</p>
+			<div class="plansButtons">
+				<button class="consultarPlano">Consultar</button>
+				<button class="whatsappBtn">Whatsapp</button>
+			</div>
+		</div>
+		
+		<div class="subMainPlanInfo">
+			<div class="connectionSpeed">
 
-							<div class="includedApps" style="display:${display}">
-								<span>Inclui: </span>
-								<div class="flexIncludedApps"></div>
-							</div>	
-						</div>	
+			<article class="downloadContainer">
+				<small class="speedContent" id="downloadContent">Download</small>
 
-						<hr class="line">
+				<div class="speedContainer">
+					${returnSvgIcon("download")}
+					<span class="download">${ex["megaBytes"]}  <small> Mbps </small> </span>
+				</div>
+			</article>
 
-						<div class="contratarBox">
-							<p class="price">Preço Mensal: <span>${ex["valor"]}R$</span></p>
-							<button class="contratarPlanoBtn">Adquira Já!</button>
-						</div>
+			<article class="uploadContainer">
+				<small class="speedContent" id="uploadContent">Upload</small>
 
-						<small class="taxa">Taxa de Instalação de R$ 50,00</small>
-						</div>
+				<div class="speedContainer">
+					${returnSvgIcon("upload")}
+					<span class="upload">${ex["megaBytes"] / 2} <small> Mbps </small> </span>
+				</div>
+			</article>
 
+			</div>
 
-						`)
+			<hr class="longLine">
+
+			<div class="priceContainer"> 
+				<h2 class="price">R$ ${ex["valor"]}/mês</h2>
+				<small class="taxa">+ Taxa de instalação de R$ 50,00</small>
+			</div>
+
+		</div>`)
 }
 
 export function verifyCepRegister() {
@@ -187,6 +191,53 @@ export function showAlert(alertContent, cep) {
 	setTimeout(() => {
 		alertBox.style.display = 'none'
 	}, 1700)
+}
+
+export function showAnnouncement(ex) {
+
+	const main = document.querySelector("main")
+	const blockedImage = document.querySelector(".blockedImage")
+	const header = document.querySelector("header")
+
+	main.style.filter = "blur(10px)"
+	blockedImage.style.filter = "blur(10px)"
+	header.style.filter = "blur(10px)"
+
+	let customContent = ex["custom"] ? `${ex["escolhas"]} Apps Inclusos` : ex["apps"].join(",").replaceAll(",", " & ").toUpperCase()
+
+	return (
+		`<div class="announcement">
+
+			<button class="closeAnnouncement">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="blue">
+					<path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+				</svg>
+			</button>
+
+			<div class="announcementImage">
+				<img src="${ex["imagem"]}" alt="Plano ${ex["nome"]}">
+			</div>
+
+			<article class="captionAnnouncement">
+				<div class="announcementTitle">
+					<h1>Aqui Na <span>Fluinet</span> você encontra</h1>
+					<h2 class="megaByteSpeed">${ex["nome"].replace("MB", "Mega")} + <span>${customContent}</span></h2>
+				</div>
+
+				<div class="checkCaptions">
+
+					<span>Internet Wifi de Alta Velocidade</span>
+					<span>Por um preço Justo e acessível</span>
+				</div>
+
+				<div class="buttonsAnnouncement">
+				<a href="#planos"><button class="consultarBtn">Consultar</button></a>
+				<button class="whatsappButton">Whatsapp</button>
+			</div>
+			</article>
+
+		</div>`
+	)
 }
 
 export async function contratarPlano(item, alertContent, customTable) {
