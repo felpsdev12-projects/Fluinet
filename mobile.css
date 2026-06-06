@@ -173,8 +173,8 @@
 				.announcementTitle {
 
 					.megaByteSpeed {
-					font-size: 28px;
-				}
+						font-size: 28px;
+					}
 				}
 			}
 
@@ -183,7 +183,7 @@
 				width: 60%;
 				display: flex;
 				padding: 5px;
-				
+
 				img {
 					border-radius: 0;
 				}
@@ -240,48 +240,58 @@
 
 	section#feedback {
 
-		.flexBox {
-			height: auto;
-			width: 100dvw;
-			display: flex;
-			flex-direction: column;
-			position: relative;
-			right: 35px;
+		h2 {
+			font-size: 23px;
+			margin-left: 0;
+		}
 
-			.feedbackNumbers {
-				padding: 5px;
-				width: 100%;
-				order: 1;
-				justify-content: space-around;
-				margin: 0;
-				gap: 5px;
-				display: flex;
-				flex-direction: row;
-				align-items: center;
+		.feedbackBox {
+			width: 70%;
 
-				a.commentIcon {
-					display: flex;
-					width: 100%;
-				}
-			}
+			.feedbackContent {
 
-			.feedbackBox {
-				width: 100%;
-				order: 2;
-				display: flex;
-				gap: 50px;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-
-				.feedbackContent {
-					height: auto;
-					width: 90dvw;
-
-					.flexFirstLine {
-						flex-direction: column;
+					.feedbackLastLine {
+					.feedbackCaption {
+						font-weight: 500;
 					}
 				}
+			}
+		}
+	}
+
+	section#beneficios {
+		
+		.beneficiosContainer {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 10px;
+			align-items: center;
+			justify-content: center;
+			
+			article {
+				height: 300px;
+				width: 180px;
+
+				i {
+					width: 50px;
+					height: 50px;
+				}
+
+				img {
+					width: 150px;
+				}
+
+				span {
+					max-width: 90%;
+				}
+			}
+		}
+
+		.copyright {
+			flex-direction: column;
+			width: 100%;
+
+			img {
+				width: 150px;
 			}
 		}
 	}

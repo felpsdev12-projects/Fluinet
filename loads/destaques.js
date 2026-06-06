@@ -68,20 +68,10 @@ const totalStars = (e) => module.returnEstrelas(e)
 
 const feedbacks = data["feedbacks"]
 
-document.querySelector(".totalComments").textContent = feedbacks.length
-
-let allStars = feedbacks.reduce((acc, obj) => acc + obj.avaliacao, 0)
-let result = allStars / feedbacks.length
-let finalResult = result.toFixed(1)
-
 const colorResult = (e) => {
 
 	return module.averageColor(e)
 }
-
-document.querySelector(".totalAverage").innerHTML = `${totalStars(finalResult)}`
-
-document.querySelector(".totalMedia").textContent = finalResult
 
 feedbacks.forEach((obj) => {
 
@@ -89,16 +79,20 @@ feedbacks.forEach((obj) => {
 	div.className = "feedbackContent"
 
 	div.innerHTML = `
-	
-		<div class="flexFirstLine">
-			<h3 class="name">${obj["nome"]}</h3>
-				<div class="stars">
-					${totalStars(obj["avaliacao"])}
-				</div>
-				<h4>${obj["data"]}</h4>
-				<h3 class="nota yg_outlined">${obj["avaliacao"]}</h3>
-			</div>
-				<p class="content">${obj["feedback"]}</p>			
+		<div class="feedbackFirstLine">
+			<h3 class="feedbackUser">${obj["nome"]}</h3>
+		</div>
+
+		<div class="feedbackSecondLine">
+			<article class="feedbackStars"> ${module.returnEstrelas(obj["avaliacao"])} </article>
+			<span class="feedbackDate">${obj["data"]}</span>
+		</div>
+
+		<div class="feedbackLastLine">
+			<span class="feedbackCaption">${obj["feedback"]}</span>
+		</div>
 	`
 	feedbackBox.appendChild(div)
+
+	//nome - stars(avaliacao) - data - number(avaliacao) - feedback
 });
