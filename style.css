@@ -319,8 +319,8 @@ header {
 			display: flex;
 			align-items: center;
 			justify-content: space-around;
-			width: 160px;
-			height: 45px;
+			width: 180px;
+			height: 40px;
 			background: var(--orange);
 			padding: 3px;
 			border: none;
@@ -884,7 +884,7 @@ section#planos {
 						}
 
 						span {
-							background: blue;
+							background: var(--fblue);
 							box-shadow: 0 0 0 1px var(--gray);
 							color: white;
 							padding: 0 3px;
@@ -894,7 +894,7 @@ section#planos {
 				.megaByteSpeed {
 					font-size: 32px;
 					margin-left: 20px;
-					color: blue;
+					color: var(--fblue);
 					text-shadow: 2px 1px black;
 				}	
 			}
@@ -906,7 +906,7 @@ section#planos {
 				align-self: flex-start;
 
 				span {
-					border-bottom: solid blue 2px;
+					border-bottom: solid var(--fblue) 2px;
 					font-size: 17px;
 				}
 			}
@@ -924,13 +924,13 @@ section#planos {
 				}
 
 				.consultarBtn {
-					border-bottom: solid blue 2px;
+					border-bottom: solid var(--fblue) 2px;
 					background: transparent;
 				}
 
 				.consultarBtn:hover {
 					scale: 1.1;
-					color: blue;
+					color: var(--fblue);
 				}
 
 				.whatsappButton {
